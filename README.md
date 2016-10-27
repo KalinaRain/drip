@@ -10,17 +10,30 @@
 - [BadgeView](https://github.com/stefanjauker/BadgeView)（stefanjauker的,改颜色需要在BadgeView源码里面改） 
 - [android-viewbadger](https://github.com/jgilfelt/android-viewbadger)（可以设置提示为数字或者文字，以及背景颜色）  
   
+### 标签tagview
+- [TAGView](https://github.com/Jude95/TAGView)（可以设置背景图片的形状和颜色，可以同时显示图片和文字）
+- [android-tagview](https://github.com/kaedea/android-tagview)（Android-Cloud-TagView-Plus，除了能设置标签的样式外，还能监听标签的点击和删除事件）
+- [TagCloudView](https://github.com/kingideayou/TagCloudView)（支持 SingleLine 模式的标签云效果）
+- [TagView](https://github.com/Cutta/TagView)（纯文字彩色标签，可以监听标签被选择和删除时的状态，可以单击删除）
+- [android-tagview](https://github.com/VEINHORN/android-tagview)（含有箭头的彩色标签）
+- [AndroidTagView](https://github.com/whilu/AndroidTagView)（可以添加和删除tag，监听单击和长按）  
+- [EasyTagDragView](https://github.com/wenhuaijun/EasyTagDragView)(仿网易新闻app下拉标签选择菜单，长按拖动排序，点击增删标签控件)  
+
 ### 圆形图片：CircleImageView
 - [CircleImageView](https://github.com/hdodenhof/CircleImageView)（hdodenhof大神的，单纯的圆形IMageView，可以设置边框，目前还有一些限制）
 - [RoundedImageView](https://github.com/vinc3m1/RoundedImageView)（椭圆或者圆角矩形皆可，可以设置边框）  
   
+### 流程指示器StepView
+- [StepView](https://github.com/baoyachi/StepView)（横向和竖直方向的流程显示，可以用于订单或者物流等需要不同状态的场景）
+- [Android-StepsView](https://github.com/anton46/Android-StepsView)（单纯的横向流程，可以设置颜色）  
+
 ### RecyclerView、ListView、GridView的封装
 - [EasyRecyclerView](https://github.com/Jude95/EasyRecyclerView)（包含上拉加载和下拉刷新、EmptyView、showProgress、showError）
   
 ======================================================================
 <h2 id="2">动画</h2>
 
-### 加载动画LoadingView
+### 加载进度条LoadingView
 - [AVLoadingIndicatorView](https://github.com/81813780/AVLoadingIndicatorView)（各式各样的ProgressBar）
 - [NVActivityIndicatorView](https://github.com/ninjaprox/NVActivityIndicatorView)（各式各样的ProgressBar）
   
