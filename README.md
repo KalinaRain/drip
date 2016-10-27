@@ -29,16 +29,24 @@
 
 ### RecyclerView、ListView、GridView的封装
 - [EasyRecyclerView](https://github.com/Jude95/EasyRecyclerView)（包含上拉加载和下拉刷新、EmptyView、showProgress、showError）
-  
+
+### dialog
+- [material-dialogs](https://github.com/afollestad/material-dialogs)（对dialog很好的封装，不过使用教程比较多，接入略微复杂点）
+- [FlycoDialog_Master](https://github.com/H07000223/FlycoDialog_Master)（有material design的，有多item的，也有ActionSheetDialog从屏幕底端弹出的那种，风格清晰，自带弹出与关闭动画，不过依赖有点多）  
+- [NiftyDialogEffects](https://github.com/sd6352051/NiftyDialogEffects)（弹出的时候有各种动画）
+
 ======================================================================
 <h2 id="2">动画</h2>
 
 ### 加载进度条LoadingView
 - [AVLoadingIndicatorView](https://github.com/81813780/AVLoadingIndicatorView)（各式各样的ProgressBar）
 - [NVActivityIndicatorView](https://github.com/ninjaprox/NVActivityIndicatorView)（各式各样的ProgressBar）
+- [NumberProgressBar](https://github.com/daimajia/NumberProgressBar)（daimajia大神的带数字的横向ProgressBar）
   
 ### 动画
 - [recyclerview-animators](https://github.com/wasabeef/recyclerview-animators)（RecyclerView相关动画）
+- [AndroidViewAnimations](https://github.com/daimajia/AndroidViewAnimations)（daimajia大神的，各种动画，nice）
+- [AndroidSwipeLayout](https://github.com/daimajia/AndroidSwipeLayout)（listview和RecyclerView的滑动删除、收藏）
   
 ======================================================================
 <h2 id="3">开发常用</h2>
@@ -56,14 +64,15 @@
 - [PageIndicatorView](https://github.com/romandanylyk/PageIndicatorView)（An page indicator for Android ViewPager）
 
 ### 滑动关闭页面
-- []()（）
-- []()（）
-- []()（）
-- []()（）
-- []()（）
-- []()（）
-- []()（）
+- [SwipeBackLayout](https://github.com/ikew0ng/SwipeBackLayout)（从上下左右四个方向滑动关闭Activity，可以设置首页不滑动 setSwipeBackEnable(false)，不过activity需要设置透明主题）
+- [SlideBackLayout](http://blog.csdn.net/meijian531161724/article/details/50763931)（不需要继承什么，只是初始化并bind）
+- [SwipeBackHelper](https://github.com/Jude95/SwipeBackHelper)（Jude95的，在activity的生命周期中调用相应的方法，好像对图层渲染的压力小点，有机会研究下）
+- [SwipeBack](https://github.com/liuguangqiang/SwipeBack)（liuguangqiang的，四个方向滑动关闭，不过xml根目录好像必须要是SwipeBackLayout ）
+- [SwipeBack](https://github.com/sockeqwe/SwipeBack)（需要和ViewPager的滑动区分下）
+- [SwipeBackFragment](https://github.com/YoKeyword/SwipeBackFragment)（滑动Fragment&Activity边缘可以返回）
 
+### 多Fragment使用
+- [Fragmentation](https://github.com/YoKeyword/Fragmentation)（为"单Activity ＋ 多Fragment","多模块Activity + 多Fragment"架构而生，大大简化使用过程，轻松解决各种复杂嵌套等问题，修复了官方Fragment库中存在的一些BUG）
   
 =============================================================================
 <h2 id="4">架构相关</h2>
