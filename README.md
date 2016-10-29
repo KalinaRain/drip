@@ -50,18 +50,22 @@
   
 ======================================================================
 <h2 id="3">开发常用</h2>
-
-### 底部的导航栏：
+  
+### 导航栏：
+- [FlycoTabLayout](https://github.com/H07000223/FlycoTabLayout)（顶端和底部的导航栏，nice！自带indicator，可以设置数字或者小红点的消息提示，tab样式丰富-圆角矩形）
 - [BottomNavigationView](https://developer.android.com/reference/android/support/design/widget/BottomNavigationView.html)（官方design25.0.0之后才有的，compile 'com.android.support:design:25.0.0'，不过Tab样式好像比较少）
-- [BottomNavigation](https://github.com/Ashok-Varma/BottomNavigation)（3-5个Item，可以设置Badges圆形消息提示和提示的背景颜色）
+- [BottomNavigation](https://github.com/Ashok-Varma/BottomNavigation)（3-5个Item，可以设置Badges圆形消息提示和提示的背景颜色，包含隐藏动画）
 - [PagerBottomTabStrip](https://github.com/tyzlmjj/PagerBottomTabStrip)（可以设置Badge圆形消息提示和提示的背景颜色）
 - 除了上述直接使用的库之外，还可以自己实现  
-1.RadioGroup+ViewPage+Fragment  
-2.FragmentTabHost+Fragment  
-3.利用TextView+ImageView实现（不推荐，太麻烦了）  
+1.TabLayout+ViewPager（5.0之后推出的）  
+2.RadioGroup+ViewPager+Fragment  
+3.FragmentTabHost+Fragment  
+4.利用TextView+ImageView实现（不推荐，太麻烦了）  
 
 ### ViewPager相关
 - [PageIndicatorView](https://github.com/romandanylyk/PageIndicatorView)（An page indicator for Android ViewPager）
+- [PagerSlidingTabStrip](https://github.com/jpardogo/PagerSlidingTabStrip)（Material Design风格，感觉和TabLayout实现的差不多）
+- [ViewPagerIndicator](https://github.com/JakeWharton/ViewPagerIndicator)（很久的了，我觉得官方新出的一些都比这个好）
 
 ### 滑动关闭页面
 - [SwipeBackLayout](https://github.com/ikew0ng/SwipeBackLayout)（从上下左右四个方向滑动关闭Activity，可以设置首页不滑动 setSwipeBackEnable(false)，不过activity需要设置透明主题）
