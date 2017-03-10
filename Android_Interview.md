@@ -1,16 +1,106 @@
 # Android面试知识点（整理中）  
 
-转眼间学习安卓已经有3年了，再加上最近要找工作，所以想着把Android面试的各种知识点总结并整理一下，也算是对这一段时间的认可
+>转眼间学习Android已经有3年了，再加上最近要找工作，所以想着把Android面试的各种知识点总结并整理一下，也算是对这一段时间的付出做个总结。  
+>要找一份好工作，自然要对Android，Java，数据结构，算法，计算机基础等知识点都非常熟悉，除此之外还要注重细节，如果你已经经历过一些大公司的面试，相信你已经知道了细节的重要性。
 
 我会持续更新的，欢迎watch
 
-==============================================================================
-<h2 id="9">Java</h2>
+***
+
+## 目录  
+[一、Java](#1)  
+
+[二、Android](#2)  
+
+[三、数据结构](#3)  
+
+[四、算法](#4)  
+
+[五、计算机基础](#5)  
+
+
+<h2 id="1">一、Java</h2>
+
+ArrayList、LinkedList、Vector的区别 Map Collection 
+
+Collection包结构，与Collections的区别
+
+Excption与Error包结构,OOM和SOF
+
+HashMap和HashTable的区别
+
+HashMap源码分析
+
+Hashcode的作用
+
+Map、Set、List、Queue、Stack的特点与用法
+
+Object有哪些公用方法？
+
+Override和Overload的使用规则和区别
+
+Switch能否用string做参数？
+
+ThreadLocal的使用规则和源码分析
+
+ThreadPool用法与示例
+
+equals与==的区别
+
+try catch finally，try里有return，finally还执行么？
+
+九种基本数据类型的大小，以及他们的封装类
+
+从源码分析String、StringBuffer与StringBuilder区别和联系
+
+多线程下生产者消费者问题的五种同步方法实现
+
+实现多线程的两种方法
+
+接口（Interface）与 抽象类 （Abstract）使用规则和区别
+
+方法锁、对象锁和类锁的意义和区别
+
+四种引用，强弱软虚，用到的场景
+
+线程同步的方法：sychronized、lock、reentrantLock分析
+
+集合框架的层次结构和使用规则梳理
+
+面向对象的三个特征与含义
+
+static的作用和意义
+
+多态实现的JVM调用过程
+
+wait()和sleep()的区别
+
+git命令使用
+
+Java与C++对比
+java反射
+
+java回调
+
+Java泛型
+
+java 新特性
+
+Java IO与NIO
+
+foreach与正常for循环效率对比
+
 多线程
+http://droidyue.com/blog/2014/12/21/string-literal-pool-in-java/
+http://droidyue.com/blog/2014/12/07/differences-between-stack-and-heap-in-java/
+http://droidyue.com/blog/2014/12/21/java-runtime-data-areas/
+http://www.importnew.com/18548.html
 
+<h2 id="2">二、Android</h2>  
 
-## Android  
+Activity 与Fragment（生命周期，四种启动模式）
 
+Android 名企面试题及答案整理（一）
 生命周期：
 电话打进来：
 home键：
@@ -22,14 +112,87 @@ VIew绘制
 常用设计模式
 jvm
 GC
-产品架构 MVP MVC MVVM
-性能优化
+### 产品架构 MVP MVC MVVM
+### Android中设计模式的应用与Android 源码中的设计模式
+
+### 性能优化
+
+### 源码分析
 内存泄露
 进程保活
 AsyncTask
 
-## 数据结构：
-## 算法：
+Service全面总结
+
+IntentService使用详解和实例介绍
+
+Fragment 全解析
+
+ContentProvider实例详解
+
+BroadcastReceiver使用总结
+
+Android异步任务机制之AsycTask
+
+Android启动过程图解
+
+Android 自定义View入门
+
+Android 自定义ViewGroup入门实践
+
+Android 缓存机制
+
+Android 数据存储五种方式使用与总结
+
+Android 异步消息处理机制源码解析
+
+Android View事件分发机制源码分析
+
+Android SQLite的使用入门
+
+AIDL的使用情况和实例介绍
+
+Android中弱引用与软引用的应用场景
+
+Android长连接，怎么处理心跳机制
+
+Asset目录与res目录的区别
+
+Binder机制原理和底层实现
+
+Json优劣势
+
+ListView优化
+
+android中图片缓存
+
+两类动画
+
+五大布局易混淆知识
+
+保证service不被杀死
+
+加速启动activity
+
+怎样退出终止App
+
+activity切换动画
+
+性能优化
+启动加速
+布局性能优化(include, viewstub, merge)
+OOM
+电量
+
+XML解析（DOM、SAX、Pull的区别和优缺点）
+
+
+
+<h2 id="3">数据结构</h2>  
+
+<h2 id="4">算法</h2>
+>对于算法，本人一直认为这是个很高大上的东西，而且事实上他也确实很高大上，如果真的要想提升自己的算法水平，最好是去刷题，单纯的看别人的博客，效果不是很大。目前比较出名的算法刷题网站（online judge）有[lintcode](http://www.lintcode.com/zh-cn/)、 [leetcode](https://leetcode.com/)、 [hihocoder](http://hihocoder.com/)，以及各大高校的网站[参考](http://www.cnblogs.com/Xredman/archive/2009/03/23/1420015.html)。
+
 https://github.com/Dev-XYS/Algorithms
 https://leetcode.com/problemset/algorithms/
 http://blog.csdn.net/v_july_v/article/details/6543438
@@ -65,7 +228,6 @@ http://www.jianshu.com/p/89f19d67b348
 http://www.trinea.cn/android/java-annotation-android-open-source-analysis/
 http://www.tuicool.com/articles/QB73eyf
 https://gist.github.com/errord/7801466
-https://github.com/karmalove/AndroidInterview
 
-## 其他
+<h2 id="5">计算机基础</h2>
 Http TCP/IP 
