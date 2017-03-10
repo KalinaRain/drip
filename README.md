@@ -2,7 +2,7 @@
 安卓开发点滴记录
 ——安卓开发中的常用的库、view、widget以及一些知识总结
 
-[View与Widget](#1) | [动画](#2) | [开发常用](#3) | [架构相关](#4) | [安卓Base封装](#5) | [直播技术](#6)
+[View与Widget](#1) | [动画](#2) | [开发常用](#3) | [架构相关](#4) | [安卓Base封装](#5) | [直播技术](#6) | [实用插件](#7) | [Java深入](#8) | [Android面试知识点整理](https://github.com/KalinaRain/drip/Android_Interview.md)
  
 <h2 id="1">View与Widget</h2>
 
@@ -20,20 +20,38 @@
 - [EasyTagDragView](https://github.com/wenhuaijun/EasyTagDragView)(仿网易新闻app下拉标签选择菜单，长按拖动排序，点击增删标签控件)  
 
 ### 圆形图片：CircleImageView
-- [CircleImageView](https://github.com/hdodenhof/CircleImageView)（hdodenhof大神的，单纯的圆形IMageView，可以设置边框，目前还有一些限制）
+- [CircleImageView](https://github.com/hdodenhof/CircleImageView)（hdodenhof大神的，单纯的圆形ImageView，可以设置边框，目前还有一些限制）
 - [RoundedImageView](https://github.com/vinc3m1/RoundedImageView)（椭圆或者圆角矩形皆可，可以设置边框）  
+- [CircleImageView](https://github.com/zuoweitan/CircleImageView)（使用clippath实现的CircleImageView,没有Bitmap,没有锯齿，可以设置其他的ScaleType）
   
 ### 流程指示器StepView
 - [StepView](https://github.com/baoyachi/StepView)（横向和竖直方向的流程显示，可以用于订单或者物流等需要不同状态的场景）
 - [Android-StepsView](https://github.com/anton46/Android-StepsView)（单纯的横向流程，可以设置颜色）  
-
+  
+### 可以展开的TextView：ExpandableTextView
+- [ExpandableTextView](https://github.com/Chen-Sir/ExpandableTextView)（可以展开和收起的TextView，用于多文字显示）
+- [ExpandableTextView](https://github.com/Manabu-GT/ExpandableTextView)（需要包含TextView和ImageView，感觉没有上面的方便，不过适合自定义单击的图片及其位置）
+  
+### ToggleButton
+- [TriStateToggleButton](https://github.com/BeppiMenozzi/TriStateToggleButton)（具有三种状态的切换开关，也可以只两种状态，包含动画属性）
+- [RMSwitch]（Android 两状态或者三状态Switch 按钮，可以设置按钮的图片，多样式）
+  
+### 日历
+- [LightCalendarView](https://github.com/recruit-mp/LightCalendarView)（简洁风格的日历 View）
+  
 ### RecyclerView、ListView、GridView的封装
 - [EasyRecyclerView](https://github.com/Jude95/EasyRecyclerView)（包含上拉加载和下拉刷新、EmptyView、showProgress、showError）
-
+  
 ### dialog
 - [material-dialogs](https://github.com/afollestad/material-dialogs)（对dialog很好的封装，不过使用教程比较多，接入略微复杂点）
 - [FlycoDialog_Master](https://github.com/H07000223/FlycoDialog_Master)（有material design的，有多item的，也有ActionSheetDialog从屏幕底端弹出的那种，风格清晰，自带弹出与关闭动画，不过依赖有点多）  
 - [NiftyDialogEffects](https://github.com/sd6352051/NiftyDialogEffects)（弹出的时候有各种动画）
+  
+### 漂亮的弧形顶部布局效果
+- [ArcLayout](https://github.com/florent37/ArcLayout)（漂亮的弧形顶部布局效果）
+  
+### MusicPlayerView
+- [Material_MusicPlayerView](https://github.com/amineghabi/Material_MusicPlayerView)（material design的音乐播放器）
 
 ======================================================================
 <h2 id="2">动画</h2>
@@ -78,6 +96,12 @@
 ### 多Fragment使用
 - [Fragmentation](https://github.com/YoKeyword/Fragmentation)（为"单Activity ＋ 多Fragment","多模块Activity + 多Fragment"架构而生，大大简化使用过程，轻松解决各种复杂嵌套等问题，修复了官方Fragment库中存在的一些BUG）
   
+### 图片选择器
+- [MediaPickerInstagram](https://github.com/NodensN/MediaPickerInstagram)（Material风格的类似 Instagram 的图片选择器，包含图片选择、拍照、视频拍摄）
+  
+### 密码
+- [LolliPin](https://github.com/OrangeGangsters/LolliPin)（为应用程序提供pin密码，包含数字和指纹识别）
+  
 =============================================================================
 <h2 id="4">架构相关</h2>
 
@@ -114,3 +138,27 @@
 - [DanmakuFlameMaster](https://github.com/Bilibili/DanmakuFlameMaster)（Bilibili的Android开源弹幕引擎·烈焰弹幕使）
 - [BarrageRenderer](https://github.com/unash/BarrageRenderer)（一个 iOS 上的开源弹幕渲染库）
 - [HJDanmakuDemo](https://github.com/panghaijiao/HJDanmakuDemo)（iOS系统上弹幕源码实现）
+  
+  
+==============================================================================
+<h2 id="7">实用插件</h2>
+
+### Android Studio插件
+- [JRebel](https://zeroturnaround.com/software/jrebel-for-android/features/)（Android 高效开发调试神器 JRebel，效率比Instant Run高且稳定）
+
+
+  
+==============================================================================
+<h2 id="8">java深入</h2>
+
+### java深入
+- [探索 Java 隐藏的开销](https://realm.io/cn/news/360andev-jake-wharton-java-hidden-costs-android/)
+- [java反射](http://www.cnblogs.com/zhaoyanjun/p/6074887.html)
+- [开源 Java 性能监控 （APM） 方案](https://github.com/naver/pinpoint)
+  
+==============================================================================
+<h2 id="9">Android深入</h2>
+  
+### Android深入
+- [深入Android渲染机制](http://blog.csdn.net/ccj659/article/details/53219288)
+- [java反射](http://www.cnblogs.com/zhaoyanjun/p/6074887.html)
