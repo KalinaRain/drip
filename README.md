@@ -2,7 +2,7 @@
 安卓开发点滴记录
 ——安卓开发中的常用的库、view、widget以及一些知识总结
 
-[View与Widget](#1) | [动画](#2) | [开发常用](#3) | [架构相关](#4) | [安卓Base封装](#5) | [直播技术](#6) | [实用插件](#7) | [Java深入](#8) | [Android面试知识点整理](https://github.com/KalinaRain/drip/Android_Interview.md)
+[View与Widget](#1) | [动画](#2) | [开发常用](#3) | [架构相关](#4) | [安卓Base封装](#5) | [直播技术](#6) | [实用插件](#7) | [Java深入](#8) | [Android面试知识点整理](Android_Interview.md)
  
 <h2 id="1">View与Widget</h2>
 
