@@ -22,10 +22,12 @@
 
 <h2 id="1">一、Java</h2>
 
-### Java特性与面向对象
+### Java基础面试
+
+实例变量，局部变量，类变量，final变量的区别
 * 面向对象的六大原则  
 
-** 单一职责原则
+* 单一职责原则
 　　所谓职责是指类变化的原因。如果一个类有多于一个的动机被改变，那么这个类就具有多于一个的职责。而单一职责原则就是指一个类或者模块应该有且只有一个改变的原因。通俗的说，即一个类只负责一项职责，将一组相关性很高的函数、数据封装到一个类中。
 
 ** 开闭原则  
@@ -68,6 +70,7 @@ HashMap和HashTable的区别
 
 HashMap源码分析
 
+流 输入输出
 Hashcode的作用
 
 Map、Set、List、Queue、Stack的特点与用法
@@ -224,7 +227,9 @@ GC
 进程保活
 AsyncTask
 
-
+Handler Message Looper
+IntentService和Service  HandlerThread ServiceHandler 
+Parcelable和Serializable
 
 Fragment 全解析
 
@@ -316,11 +321,18 @@ HTTP与HTTPS的区别以及如何实现安全性
 N * N的方格纸,里面有多少个正方形
 现在下载速度很慢,试从网络协议的角度分析原因,并优化(网络的5层都可以涉及)
 
+已知进栈的顺序，求出栈的顺序
 
 完全二叉树的深度表达式
 已知前序遍历和中序遍历，求后序遍历；已知后序遍历和中序遍历，求前序遍历；
 合法的堆
 
+已知栈的输入序列为1.2.3，则经过栈的作用后可以得到几种不同的输出序列——卡特兰数
+
+递归转化为非递归（不是所有的递归转化为非递归都要用到栈，方法有两种，对于尾递归和单向递归可以使用循环结构算法替代，另外一个才是栈）
+二叉树的宽度优先遍历和深度优先遍历 按层遍历
+
+字符串的nextval和next KMP算法
 
 <h2 id="4">算法</h2>
 >对于算法，本人一直认为这是个很高大上的东西，而且事实上他也确实很高大上，如果真的要想提升自己的算法水平，最好是去刷题，单纯的看别人的博客，效果不是很大。目前比较出名的算法刷题网站（online judge）有[lintcode](http://www.lintcode.com/zh-cn/)、 [leetcode](https://leetcode.com/)、 [hihocoder](http://hihocoder.com/)，以及各大高校的网站[参考](http://www.cnblogs.com/Xredman/archive/2009/03/23/1420015.html)。
@@ -345,10 +357,8 @@ http://www.jianshu.com/p/1b824e26105b
 https://gold.xitu.io/post/57dcd394a22b9d00610c5ec8
 http://www.devstore.cn/essay/essayInfo/7195.html
 https://www.diycode.cc/topics/165
-http://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=2649548612&idx=1&sn=8e46b6dd47bd8577a5f7098aa0889098&chksm=f1180c39c66f852fd955a29a9cb4ffa9dc4d528cab524059bcabaf37954fa3f04bc52c41dae8&scene=21#wechat_redirect
-http://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=401462221&idx=1&sn=dda1f3500c993d643dcdae6dd2cc3d6f&scene=21#wechat_redirect
-http://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=2649547668&idx=1&sn=b2667c46188c6674c90aa72c2fba4719&scene=21#wechat_redirect
-http://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=2649547696&idx=1&sn=e0694067af35df118c4e949a238719f0&scene=21#wechat_redirect
+
+
 http://blog.csdn.net/sinat_35512245/article/details/59056120
 
 https://github.com/GeniusVJR/LearningNotes
@@ -360,7 +370,12 @@ http://www.tuicool.com/articles/QB73eyf
 https://gist.github.com/errord/7801466
 
 <h2 id="5">计算机基础</h2>
+### 计算机网络
 Http TCP/IP 
-后缀表达式
+TCP与UDP的区别
+TCP的三次握手和四次挥手
+
+### 操作系统
+后缀表达式（逆波兰）
 16进制转化8进制 2进制
-已知进栈的顺序，求出栈的顺序
+
