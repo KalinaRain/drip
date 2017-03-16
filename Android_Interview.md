@@ -339,17 +339,17 @@ N * N的方格纸,里面有多少个正方形
 
 Trie树  
 
-https://github.com/Dev-XYS/Algorithms
-https://leetcode.com/problemset/algorithms/
-http://blog.csdn.net/v_july_v/article/details/6543438
-http://blog.csdn.net/v_july_v/article/details/7041827
-http://selfboot.cn/2016/07/24/leetcode_guide_why/
-https://github.com/xuelangZF/LeetCode/tree/master/HashTable
-https://github.com/scottszb1987/LeetCodeInCSharp
-https://github.com/shawnfan/LintCode
-http://hihocoder.com/problemset
-http://www.lintcode.com/zh-cn/problem/
-https://nanti.jisuanke.com/
+https://github.com/Dev-XYS/Algorithms  
+https://leetcode.com/problemset/algorithms/  
+http://blog.csdn.net/v_july_v/article/details/6543438  
+http://blog.csdn.net/v_july_v/article/details/7041827  
+http://selfboot.cn/2016/07/24/leetcode_guide_why/  
+https://github.com/xuelangZF/LeetCode/tree/master/HashTable  
+https://github.com/scottszb1987/LeetCodeInCSharp  
+https://github.com/shawnfan/LintCode  
+http://hihocoder.com/problemset  
+http://www.lintcode.com/zh-cn/problem/  
+https://nanti.jisuanke.com/  
 排序
 https://zhuanlan.zhihu.com/p/25498681
 https://juejin.im/post/5874bff0128fe1006b443fa0
