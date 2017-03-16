@@ -25,26 +25,30 @@
 ### Java基础面试
 
 实例变量，局部变量，类变量，final变量的区别
-* 面向对象的六大原则  
 
-* 单一职责原则
+public protected private default的区别：
+
+#### 面向对象的六大原则  
+
+* 单一职责原则  
 　　所谓职责是指类变化的原因。如果一个类有多于一个的动机被改变，那么这个类就具有多于一个的职责。而单一职责原则就是指一个类或者模块应该有且只有一个改变的原因。通俗的说，即一个类只负责一项职责，将一组相关性很高的函数、数据封装到一个类中。
 
-** 开闭原则  
+* 开闭原则  
 　　对于扩展是开放的，这意味着模块的行为是可以扩展的。当应用的需求改变时，我们可以对模块进行扩展，使其具有满足那些改变的新行为。对于修改是关闭的，对模块行为进行扩展时，不必改动模块的源代码。通俗的说，尽量通过扩展的方式实现系统的升级维护和新功能添加，而不是通过修改已有的源代码。
 
-里氏替换原则
+* 里氏替换原则  
 　　使用“抽象(Abstraction)”和“多态(Polymorphism)”将设计中的静态结构改为动态结构，维持设计的封闭性。任何基类可以出现的地方，子类一定可以出现。在软件中将一个基类对象替换成它的子类对象，程序将不会产生任何错误和异常，反过来则不成立。在程序中尽量使用基类类型来对对象进行定义，而在运行时再确定其子类类型，用子类对象来替换父类对象。
 
-依赖倒置原则
+* 依赖倒置原则  
 　　高层次的模块不应该依赖于低层次的模块，他们都应该依赖于抽象。抽象不应该依赖于具体实现，具体实现应该依赖于抽象。程序要依赖于抽象接口，不要依赖于具体实现。简单的说就是要求对抽象进行编程，不要对实现进行编程，这样就降低了客户与实现模块间的耦合（各个模块之间相互传递的参数声明为抽象类型，而不是声明为具体的实现类）。
 
-接口隔离原则
+* 接口隔离原则  
 　　一个类对另一个类的依赖应该建立在最小的接口上。其原则是将非常庞大的、臃肿的接口拆分成更小的更具体的接口。
 
-迪米特原则
+* 迪米特原则  
 　　又叫作最少知识原则，就是说一个对象应当对其他对象有尽可能少的了解。通俗地讲，一个类应该对自己需要耦合或调用的类知道得最少，不关心被耦合或调用的类的内部实现，只负责调用你提供的方法。
 
+#### 几个关键字volatile、transient、synchronized、native 
 ### 基础
 
 集合类以及集合框架；HashMap与HashTable实现原理，线程安全性，hash冲突及处理算法；ConcurrentHashMap
@@ -135,11 +139,19 @@ http://droidyue.com/blog/2014/12/07/differences-between-stack-and-heap-in-java/
 http://droidyue.com/blog/2014/12/21/java-runtime-data-areas/
 http://www.importnew.com/18548.html
 
+java 面试整理：
+https://sunchenglong.gitbooks.io/java-interview  
+
+java面试一定会遇到的56个面试题：
+http://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=2649547702&idx=1&sn=431dcb8cef6518fd852c32b57d79d538&scene=21#wechat_redirect
+
+ http://blog.csdn.net/sinat_35512245/article/details/59056120
+
 ***
 
 <h2 id="2">二、Android</h2>  
 ### 面试
-Android开机过程：
+#### Android开机过程：
 * BootLoder引导,然后加载Linux内核.
 * 0号进程init启动.加载init.rc配置文件,配置文件有个命令启动了zygote进程
 * zygote开始fork出SystemServer进程
@@ -148,8 +160,9 @@ Android开机过程：
 * ServerThread的run方法中开启了AMS,还孵化新进程ServiceManager,加载注册了一溜的服务,最后一句话进入loop 死循环
 run方法的SystemReady调用resumeTopActivityLocked打开锁屏界面
 
-App启动过程：
-ART和Dalvik区别：  
+#### App启动过程：
+
+#### ART和Dalvik区别：  
 Art上应用启动快，运行快，但是耗费更多存储空间，安装时间长，总的来说ART的功效就是"空间换时间"。
 ART: Ahead of Time Dalvik: Just in Time
 什么是Dalvik：Dalvik是Google公司自己设计用于Android平台的Java虚拟机。Dalvik虚拟机是Google等厂商合作开发的Android移动设备平台的核心组成部分之一，它可以支持已转换为.dex(即Dalvik Executable)格式的Java应用程序的运行，.dex格式是专为Dalvik应用设计的一种压缩格式，适合内存和处理器速度有限的系统。Dalvik经过优化，允许在有限的内存中同时运行多个虚拟机的实例，并且每一个Dalvik应用作为独立的Linux进程执行。独立的进程可以防止在虚拟机崩溃的时候所有程序都被关闭。
@@ -167,7 +180,7 @@ ART缺点：
 更大的存储空间占用，可能会增加10%-20%
 更长的应用安装时间
 
-各种Context的区别：  
+#### 各种Context的区别：  
 * Activity和Service以及Application的Context是不一样的,Activity继承自ContextThemeWraper.其他的继承自ContextWrapper
 * 每一个Activity和Service以及Application的Context都是一个新的ContextImpl对象
 * getApplication()用来获取Application实例的，但是这个方法只有在Activity和Service中才能调用的到。那么也许在绝大多数情况下我们都是在Activity或者Service中使用Application的，但是如果在一些其它的场景，比如BroadcastReceiver中也想获得Application的实例，这时就可以借助getApplicationContext()方法，getApplicationContext()比getApplication()方法的作用域会更广一些，任何一个Context的实例，只要调用getApplicationContext()方法都可以拿到我们的Application对象。
@@ -176,7 +189,7 @@ ART缺点：
 * 尽管Application、Activity、Service都有自己的ContextImpl，并且每个ContextImpl都有自己的mResources成员，但是由于它们的mResources成员都来自于唯一的ResourcesManager实例，所以它们看似不同的mResources其实都指向的是同一块内存
 * Context的数量等于Activity的个数 + Service的个数 + 1，这个1为Application
 
-### 四大组件与Fragment
+#### 四大组件与Fragment
 Activity 与Fragment（生命周期，四种启动模式） 生命周期：
 电话打进来：
 home键：
@@ -187,23 +200,23 @@ IntentService使用详解和实例介绍
 
 Android 名企面试题及答案整理（一）
 
-View的绘制流程；自定义View如何考虑机型适配；自定义View的事件分发机制；View和ViewGroup分别有哪些事件分发相关的回调方法；自定义View如何提供获取View属性的接口；
-Art和Dalvik对比；虚拟机原理，如何自己设计一个虚拟机(内存管理，类加载，双亲委派)；JVM内存模型及类加载机制；内存对象的循环引用及避免
+View的绘制流程；自定义View如何考虑机型适配；自定义View的事件分发机制；View和ViewGroup分别有哪些事件分发相关的回调方法；自定义View如何提供获取View属性的接口；  
+Art和Dalvik对比；虚拟机原理，如何自己设计一个虚拟机(内存管理，类加载，双亲委派)；JVM内存模型及类加载机制；内存对象的循环引用及避免  
 内存回收机制与GC算法(各种算法的优缺点以及应用场景)；GC原理时机以及GC对象；内存泄露场景及解决方法；OOM的避免及解决方法
-四大组件及生命周期；ContentProvider的权限管理(读写分离，权限控制-精确到表级，URL控制)；Activity的四种启动模式对比；Activity状态保存于恢复
-Fragment生命周期；Fragment状态保存
-startActivityForResult是哪个类的方法，在什么情况下使用，如果在Adapter中使用应该如何解耦
-AsyncTask原理及不足;IntentService原理
-AstncTask+HttpClient与AsyncHttpClient有什么区别
-如何保证一个后台服务不被杀死；比较省电的方式是什么
-如何通过广播拦截和abort一条短信；广播是否可以请求网络；广播引起anr的时间限制
-进程间通信，AIDL
-Handler机制及底层实现
-Binder机制及底层实现
-ApplicationContext和ActivityContext的区别
-一张Bitmap所占内存以及内存占用的计算
-对于应用更新这块是如何做的？(灰度，强制更新，分区域更新)
-混合开发，RN，weex，H5，小程序(做Android的了解一些前端js等还是很有好处的)
+四大组件及生命周期；ContentProvider的权限管理(读写分离，权限控制-精确到表级，URL控制)；Activity的四种启动模式对比；Activity状态保存于恢复  
+Fragment生命周期；Fragment状态保存  
+startActivityForResult是哪个类的方法，在什么情况下使用，如果在Adapter中使用应该如何解耦  
+AsyncTask原理及不足;IntentService原理  
+AstncTask+HttpClient与AsyncHttpClient有什么区别  
+如何保证一个后台服务不被杀死；比较省电的方式是什么  
+如何通过广播拦截和abort一条短信；广播是否可以请求网络；广播引起anr的时间限制  
+进程间通信，AIDL  
+Handler机制及底层实现  
+Binder机制及底层实现  
+ApplicationContext和ActivityContext的区别  
+一张Bitmap所占内存以及内存占用的计算  
+对于应用更新这块是如何做的？(灰度，强制更新，分区域更新)  
+混合开发，RN，weex，H5，小程序(做Android的了解一些前端js等还是很有好处的)  
 说一款你认为当前比较火的应用并设计(直播APP)
 
 
@@ -296,7 +309,9 @@ XML解析（DOM、SAX、Pull的区别和优缺点）
 ### 热修复
 
 
-
+除此之外，也有不少大牛将安卓面试的知识点整理过，有兴趣的可以访问看看。
+https://hit-alibaba.github.io/interview
+https://github.com/karmalove/AndroidInterview
 
 <h2 id="3">数据结构</h2>  
 堆和栈在内存中的区别是什么(数据结构方面以及实际实现方面)
@@ -312,9 +327,7 @@ XML解析（DOM、SAX、Pull的区别和优缺点）
 常见编码方式；utf-8编码中的中文占几个字节；int型几个字节
 实现一个Json解析器(可以通过正则提高速度)
 MVC MVP MVVM; 常见的设计模式；写出观察者模式的代码
-TCP的3次握手和四次挥手；TCP与UDP的区别
-HTTP协议；HTTP1.0与2.0的区别；HTTP报文结构
-HTTP与HTTPS的区别以及如何实现安全性
+
 
 5枚硬币，2正3反如何划分为两堆然后通过翻转让两堆中正面向上的硬币和反面向上的硬币个数相同
 时针走一圈，时针分针重合几次
@@ -355,11 +368,7 @@ https://zhuanlan.zhihu.com/p/25498681
 https://juejin.im/post/5874bff0128fe1006b443fa0
 http://www.jianshu.com/p/1b824e26105b
 https://gold.xitu.io/post/57dcd394a22b9d00610c5ec8
-http://www.devstore.cn/essay/essayInfo/7195.html
-https://www.diycode.cc/topics/165
-
-
-http://blog.csdn.net/sinat_35512245/article/details/59056120
+https://juejin.im/post/57dcd394a22b9d00610c5ec8
 
 https://github.com/GeniusVJR/LearningNotes
 
@@ -374,6 +383,8 @@ https://gist.github.com/errord/7801466
 Http TCP/IP 
 TCP与UDP的区别
 TCP的三次握手和四次挥手
+HTTP协议；HTTP1.0与2.0的区别；HTTP报文结构
+HTTP与HTTPS的区别以及如何实现安全性
 
 ### 操作系统
 后缀表达式（逆波兰）
