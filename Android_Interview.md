@@ -49,6 +49,9 @@ public protected private default的区别：
 　　又叫作最少知识原则，就是说一个对象应当对其他对象有尽可能少的了解。通俗地讲，一个类应该对自己需要耦合或调用的类知道得最少，不关心被耦合或调用的类的内部实现，只负责调用你提供的方法。
 
 #### 几个关键字volatile、transient、synchronized、native 
+#### abstract类和interface的区别
+
+
 ### 基础
 
 集合类以及集合框架；HashMap与HashTable实现原理，线程安全性，hash冲突及处理算法；ConcurrentHashMap
@@ -74,7 +77,9 @@ HashMap和HashTable的区别
 
 HashMap源码分析
 
-流 输入输出
+#### IO流
+[IO流知识](/Java/IO流.md)  
+
 Hashcode的作用
 
 Map、Set、List、Queue、Stack的特点与用法
@@ -385,6 +390,8 @@ TCP与UDP的区别
 TCP的三次握手和四次挥手
 HTTP协议；HTTP1.0与2.0的区别；HTTP报文结构
 HTTP与HTTPS的区别以及如何实现安全性
+
+sql语句：
 
 ### 操作系统
 后缀表达式（逆波兰）
