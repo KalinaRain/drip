@@ -49,6 +49,7 @@ public protected private default的区别：
 　　又叫作最少知识原则，就是说一个对象应当对其他对象有尽可能少的了解。通俗地讲，一个类应该对自己需要耦合或调用的类知道得最少，不关心被耦合或调用的类的内部实现，只负责调用你提供的方法。
 
 #### 几个关键字volatile、transient、synchronized、native  
+transient变量不会进行序列化。例如一个实现Serializable接口的类在序列化到ObjectStream的时候，transient类型的变量不会被写入流中，同时，反序列化回来的时候，对应变量的值为null。
 
 #### abstract类和interface的区别
 
@@ -61,6 +62,7 @@ public protected private default的区别：
 同步的方法；多进程开发以及多进程应用场景
 服务器只提供数据接收接口，在多线程或多进程条件下，如何保证数据的有序到达
 #### ThreadLocal原理，实现及如何保证Local属性
+
 #### String StringBuilder StringBuffer对比
 
 
