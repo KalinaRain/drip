@@ -5,7 +5,7 @@
 
 我会持续更新的，欢迎watch
 
-***
+<hr width=100% size=3 color=#d8d8d8>
 
 ## 目录  
 [一、Java](#1)  
@@ -18,10 +18,9 @@
 
 [五、计算机基础](#5)  
 
-***
+<hr width=100% size=3 color=#d8d8d8>
 
 <h2 id="1">一、Java</h2>
-
 ### Java基础面试
 
 实例变量，局部变量，类变量，final变量的区别
@@ -186,6 +185,8 @@ http://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=2649547702&idx=1&sn=431dcb8
 
  http://blog.csdn.net/sinat_35512245/article/details/59056120
 
+>问：如果main方法被声明为private会怎样？  
+>>答：能正常编译，但运行的时候会提示”main方法不是public的”。
 ***
 
 <h2 id="2">二、Android</h2>  
