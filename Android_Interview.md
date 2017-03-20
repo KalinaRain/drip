@@ -26,18 +26,133 @@
 [Java基本概念](Java/Java基本概念.md)  
 
 ## Java面向对象
-[Java之面向对象编程](Java之面向对象编程.md)  
-Java是面向对象编程（OOP），因此，面向对象的相关知识也是需要掌握的。
+Java是面向对象编程（OOP），因此，面向对象的相关知识也是需要掌握的。  
+[Java之面向对象编程](Java/Java之面向对象编程.md)  
 
-## Java语法基础
+## 重载和覆写
+[重载和覆写](Java/重载和覆写.md)
+
+Java语法基础
+8种基本数据类型的大小，以及他们的封装类 
+ 
+|数据类型|大小  |范围   |封装类|
+| ------ | ----:| :----: |---|
+|byte    | 1  |  -128～127 | Byte |
+|short   |2    |-32768～32767 ||
+|int     |4| -2147483648～2147483647 |Integer|
+|long    |8|-9223372036854775808 ~ 9223372036854775807 |Long|
+|float   |4|-3.4E38～3.4E38 |Float|
+|double  |8| -1.7E308～1.7E308 |Double|
+|boolean |1|从字符型对应的整型数来划分，其表示范围是0～65535 |Boolean|
+|char    |2|true或false||
+
+自动装箱是 Java 编译器在基本数据类型和对应的对象包装类型之间做的一个转化。比如：把 int 转化成 Integer ，double 转化成 Double，等等。反之就是自动拆箱。
+
+#### 值传递和引用传递
+对象被值传递，意味着传递了对象的一个副本。因此，就算是改变了对象副本，也不会影响源对象的值。  
+对象被引用传递，意味着传递的并不是实际的对象，而是对象的引用。因此，外部对引用对象所做的改变会反映到所有的对象上。  
+所有的基本数据类型都是值传递，而
+
+### 不同编码下字母与中文的大小
+
+>一个 ".java" 源文件中是否可以包括多个类（不是内部类）？有什么限制？  
+可以有多个类，但只能有一个 public 的类(除了内部类)，并且 public 的类名必须与文件名相一致。
+
+静态变量和实例变量的区别？
+在语法定义上的区别：静态变量前要加 static 关键字，而实例变量前则不加。  
+在程序运行时的区别：实例变量属于某个对象的属性，必须创建了实例对象，其中的实例变量才会被分配空间，才能使用这个实例变量。静态变量不属于某个实例对象，而是属于类，所以也称为类变量，只要程序加载了类的字节码，不用创建任何实例对象，静态变量就会被分配空间，静态变量就可以被使用了。总之，实例变量必须创建对象后才可以通过这个对象来使用，静态变量则可以直接使用类名来引用。
+
+例如，对于下面的程序，无论创建多少个实例对象，永远都只分配了一个 staticVar 变量，并且每创建一个实例对象，这个 staticVar 就会加 1 ；但是，每创建一个实例对象，就会分配一个 instanceVar ，即可能分配多个 instanceVar ，并且每个instanceVar 的值都只自加了 1 次。  
+<pre><code>  
+ public class VariantTest{   
+    public static int staticVar = 0;    
+    public int instanceVar = 0;    
+    public VariantTest(){    
+        staticVar++;    
+        instanceVar++;    
+        System.out.println(“staticVar=” + staticVar + ”,instanceVar=” + instanceVar);   
+        } 
+ }    </code></pre>  
+
+>不通过构造函数也能创建对象吗?
+>>可以。Java 创建对象的几种方式（重要）：  
+(1) 用 new 语句创建对象，这是最常见的创建对象的方法。  
+(2) 运用反射手段,调用 java.lang.Class 或者 java.lang.reflect.Constructor 类的 newInstance() 实例方法。  
+(3) 调用对象的 clone() 方法。  
+(4) 运用反序列化手段，调用 java.io.ObjectInputStream 对象的 readObject() 方法。  
+(1)和(2)都会明确的显式的调用构造函数 ；(3)是在内存上对已有对象的影印，所以不会调用构造函数 ；(4)是从文件中还原类的对象，也不会调用构造函数。
+
+静态变量和实例变量的区别？
+>答：静态变量是被 static 修饰符修饰的变量，也称为类变量，它属于类，不属于类的任何一个对象，一个类不管创建多少个对象，静态变量在内存中有且仅有一个拷贝；实例变量必须依存于某一实例，需要先创建对象然后通过对象才能访问到它。静态变量可以实现让多个对象共享内存。在 Java 开发中，上下文类和工具类中通常会有大量的静态成员。
+
+是否可以从一个静态（static）方法内部发出对非静态（non-static）方法的调用？
+>答：不可以，静态方法只能访问静态成员，因为非静态方法的调用要先创建对象，因此在调用静态方法时可能对象并没有被初始化。
+
+ 如何实现对象克隆？
+>答：有两种方式：   
+1.实现 Cloneable 接口并重写 Object 类中的 clone() 方法；  
+2.实现 Serializable 接口，通过对象的序列化和反序列化实现克隆，可以实现真正的深度克隆。
+
+ 一个“.java”源文件中是否可以包含多个类（不是内部类）？有什么限制？
+>答：可以，但一个源文件中最多只能有一个公开类（public class）而且文件名必须和公开类的类名完全保持一致。
+
+Anonymous Inner Class(匿名内部类)是否可以继承其它类？是否可以实现接口？
+>答：可以继承其他类或实现其他接口，在Swing编程中常用此方式来实现事件监听和回调。
+
+内部类可以引用它的包含类（外部类）的成员吗？有没有什么限制？
+>答：一个内部类对象可以访问创建它的外部类对象的成员，包括私有成员
+
+列出自己常用的 jdk 包.
+>答：JDK 常用的 package  
+java.lang：这个是系统的基础类，比如 String 等都是这里面的，这个 package 是唯一一个可以不用 import 就可以使用的 Package  
+java.io: 这里面是所有输入输出有关的类，比如文件操作等  
+java.net: 这里面是与网络有关的类，比如 URL,URLConnection 等。  
+java.util: 这个是系统辅助类，特别是集合类 Collection,List,Map 等。  
+java.sql: 这个是数据库操作的类，Connection, Statememt，ResultSet 等
+
 
 ### 几个关键字volatile、transient、synchronized、native  
 transient变量不会进行序列化。例如一个实现Serializable接口的类在序列化到ObjectStream的时候，transient类型的变量不会被写入流中，同时，反序列化回来的时候，对应变量的值为null。
 
-### abstract类和interface的区别
+### abstract类和interface
+[interface和abstractl类](interface和abstract classs.md)
+
 ### 实例变量，局部变量，类变量，final变量的区别
 
 ### 访问修饰符public protected private default（不写）的区别：
+<table>
+	<tr>
+		<th>修饰符</th><th>当前类</th><th>同包</th><th>子类</th><th>其他包</th>
+	</tr>
+	<tr>
+		<td>public</td>
+		<td>√</td>
+		<td>√</td>
+		<td>√</td>
+		<td>√</td>
+	</tr>
+	<tr>
+		<td>protected</td>
+		<td>√</td>
+		<td>√</td>
+		<td>√</td>
+		<td>×</td>
+	</tr>
+	<tr>
+		<td>default</td>
+		<td>√</td>
+		<td>√</td>
+		<td>×</td>
+		<td>×</td>
+	</tr>
+	<tr>
+		<td>private</td>
+		<td>√</td>
+		<td>×</td>
+		<td>×</td>
+		<td>×</td>
+	</tr>
+</table>
 
 ### 基础
 Object有哪些公用方法？
@@ -50,8 +165,8 @@ Switch的作用类型
 equals与==的区别
 
 try catch finally，try里有return，finally还执行么？
+类的加载机制和初始化机制
 
-九种基本数据类型的大小，以及他们的封装类
 
 进程和线程的区别；多线程与线程池
 数据一致性如何保证；Synchronized关键字，类锁，方法锁，重入锁
@@ -68,7 +183,9 @@ try catch finally，try里有return，finally还执行么？
 
 解析与分派
 
-抽象类与接口的区别；应用场景；抽象类是否可以没有方法和属性
+
+
+***
 
 静态属性和静态方法是否可以被继承？是否可以被重写？原因
 
