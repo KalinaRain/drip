@@ -2,7 +2,9 @@
 安卓开发点滴记录
 ——安卓开发中的常用的库、view、widget以及一些知识总结
 
-[View与Widget](#1) | [动画](#2) | [开发常用](#3) | [架构相关](#4) | [安卓Base封装](#5) | [直播技术](#6) | [实用插件](#7) | [Java深入](#8) | <a href="Android_Interview.md" target="_blank">Android面试知识点整理</a>
+<a href="Android_Interview.md" target="_blank">Android面试知识点整理</a>  
+  
+[View与Widget](#1) | [动画](#2) | [开发常用](#3) | [架构相关](#4) | [安卓Base封装](#5) | [直播技术](#6) | [实用插件](#7) | [Java深入](#8) |  
  
 <h2 id="1">View与Widget</h2>
 
@@ -53,7 +55,7 @@
 ### MusicPlayerView
 - [Material_MusicPlayerView](https://github.com/amineghabi/Material_MusicPlayerView)（material design的音乐播放器）
 
-======================================================================
+***
 <h2 id="2">动画</h2>
 
 ### 加载进度条LoadingView
@@ -66,7 +68,7 @@
 - [AndroidViewAnimations](https://github.com/daimajia/AndroidViewAnimations)（daimajia大神的，各种动画，nice）
 - [AndroidSwipeLayout](https://github.com/daimajia/AndroidSwipeLayout)（listview和RecyclerView的滑动删除、收藏）
   
-======================================================================
+***
 <h2 id="3">开发常用</h2>
   
 ### 导航栏：
@@ -102,7 +104,7 @@
 ### 密码
 - [LolliPin](https://github.com/OrangeGangsters/LolliPin)（为应用程序提供pin密码，包含数字和指纹识别）
   
-=============================================================================
+***
 <h2 id="4">架构相关</h2>
 
 ### 应用MVP模式的实用项目
@@ -113,7 +115,7 @@
 - [TheMVP](https://github.com/kymjs/TheMVP)（kymjs的一个新型MVP设计）
   
 
-================================================================================
+***
 <h2 id="5">安卓Base封装</h2>
 
 ### BaseProject封装
@@ -124,7 +126,7 @@
 - [AdapterDelegates](https://github.com/sockeqwe/AdapterDelegates)（好复杂，以后再看）
 - [baseAdapter](https://github.com/hongyangAndroid/baseAdapter)（Android 万能的Adapter for ListView,RecyclerView,GridView等，支持多种Item类型的情况）
   
-==============================================================================
+***
 <h2 id="6">直播技术</h2>
 
 ### 直播技术
@@ -140,7 +142,7 @@
 - [HJDanmakuDemo](https://github.com/panghaijiao/HJDanmakuDemo)（iOS系统上弹幕源码实现）
   
   
-==============================================================================
+***
 <h2 id="7">实用插件</h2>
 
 ### Android Studio插件
@@ -148,7 +150,7 @@
 
 
   
-==============================================================================
+***
 <h2 id="8">java深入</h2>
 
 ### java深入
@@ -156,7 +158,7 @@
 - [java反射](http://www.cnblogs.com/zhaoyanjun/p/6074887.html)
 - [开源 Java 性能监控 （APM） 方案](https://github.com/naver/pinpoint)
   
-==============================================================================
+***
 <h2 id="9">Android深入</h2>
   
 ### Android深入

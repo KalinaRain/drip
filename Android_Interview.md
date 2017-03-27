@@ -29,27 +29,28 @@
 Java是面向对象编程（OOP），因此，面向对象的相关知识也是需要掌握的。  
 [Java之面向对象编程](Java/Java之面向对象编程.md)  
 
-## 重载和覆写
+### 重载和覆写
 [重载和覆写](Java/重载和覆写.md)
 
-Java语法基础
-8种基本数据类型的大小，以及他们的封装类 
- 
-|数据类型|大小  |范围   |封装类|
+### Java语法基础
+
+#### 8种基本数据类型的大小，以及他们的封装类  
+|数据类型|大小(字节)|   范围    |封装类|
 |:------:|:----:| :----:|---|
-|byte    |   1  |  -128～127 | Byte |
-|short   |   2  |-32768～32767 ||
-|int     |   4  | -2147483648～2147483647 |Integer|
-|long    |   8  |-9223372036854775808 ~ 9223372036854775807 |Long|
+|byte    |   1  |  -2^7～2^7-1  | Byte |
+|short   |   2  | -2^15～2^15-1 |Short|
+|int     |   4  | -2^31～2^31-1 |Integer|
+|long    |   8  |-2^63 ～2^63-1 |Long|
 |float   |   4  |-3.4E38～3.4E38 |Float|
 |double  |   8  | -1.7E308～1.7E308 |Double|
-|boolean |   1  |从字符型对应的整型数来划分，其表示范围是0～65535 |Boolean|
-|char    |   2  |true或false||
+|boolean |   1  |  true或false  |Boolean|
+|char    |   2  |从字符型对应的整型数来划分，其表示范围是0～65535||
 
 整数默认int，小数默认double
 
 自动装箱是 Java 编译器在基本数据类型和对应的对象包装类型之间做的一个转化。比如：把 int 转化成 Integer ，double 转化成 Double，等等。反之就是自动拆箱。
 
+#### 运算符的优先级
 #### 值传递和引用传递
 对象被值传递，意味着传递了对象的一个副本。因此，就算是改变了对象副本，也不会影响源对象的值。  
 对象被引用传递，意味着传递的并不是实际的对象，而是对象的引用。因此，外部对引用对象所做的改变会反映到所有的对象上。  
@@ -76,8 +77,8 @@ Java语法基础
         } 
  }    </code></pre>  
 
->不通过构造函数也能创建对象吗?
->>可以。Java 创建对象的几种方式（重要）：  
+不通过构造函数也能创建对象吗?
+>可以。Java 创建对象的几种方式（重要）：  
 (1) 用 new 语句创建对象，这是最常见的创建对象的方法。  
 (2) 运用反射手段,调用 java.lang.Class 或者 java.lang.reflect.Constructor 类的 newInstance() 实例方法。  
 (3) 调用对象的 clone() 方法。  
@@ -166,9 +167,9 @@ try catch finally，try里有return，finally还执行么？
 
 修改对象A的equals方法的签名，那么使用HashMap存放这个对象实例的时候，会调用哪个equals方法
 
-### Java Collection与Map
+### Collection（Set|List）与Map
 [Collection与Map](Collection与Map.md)
-
+Map、Set、List、Queue、Stack的特点与用法
 
 ### Excption与Error包结构,OOM和SOF
 
@@ -180,9 +181,6 @@ HashMap源码分析
 [IO流知识](/Java/IO流.md)  
 
 Hashcode的作用
-
-Map、Set、List、Queue、Stack的特点与用法
-
 
 
 从源码分析String、StringBuffer与StringBuilder区别和联系
@@ -204,8 +202,6 @@ wait()和sleep()的区别
 
 
 集合框架的层次结构和使用规则梳理
-
-
 
 static的作用和意义
 
