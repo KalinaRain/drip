@@ -121,7 +121,7 @@ java.sql: 这个是数据库操作的类，Connection, Statememt，ResultSet 等
 transient变量不会进行序列化。例如一个实现Serializable接口的类在序列化到ObjectStream的时候，transient类型的变量不会被写入流中，同时，反序列化回来的时候，对应变量的值为null。
 
 ### abstract类和interface
-[abstract类和interface] (Java/interface和abstract classs.md)  
+[abstract类和interface](Java/抽象类和interface.md)  
 
 ### 实例变量，局部变量，类变量，final变量的区别
 
