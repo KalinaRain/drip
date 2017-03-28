@@ -7,8 +7,10 @@
 
 <hr width=100% size=3 color=#d8d8d8>
 
-# 目录  
+# <p id="top">目录</p>  
 [一、Java](#1)  
+* Java基本概念
+* Java面向对象  
 
 [二、Android](#2)  
 
@@ -26,10 +28,11 @@
 [Java基本概念](Java/Java基本概念.md)  
 
 ## Java面向对象
-Java是面向对象编程（OOP），因此，面向对象的相关知识也是需要掌握的。  
+Java是面向对象编程（OOP），因此，面向对象的相关知识如三大特征和六大基本原则也是需要掌握的。  
 [Java之面向对象编程](Java/Java之面向对象编程.md)  
 
 ### 重载和覆写
+对于重载和覆写，除了基本知识外，最重要的就是子类和父类中重载和覆写需要注意的事项。  
 [重载和覆写](Java/重载和覆写.md)
 
 ### Java语法基础
@@ -118,7 +121,7 @@ java.sql: 这个是数据库操作的类，Connection, Statememt，ResultSet 等
 transient变量不会进行序列化。例如一个实现Serializable接口的类在序列化到ObjectStream的时候，transient类型的变量不会被写入流中，同时，反序列化回来的时候，对应变量的值为null。
 
 ### abstract类和interface
-[interface和abstractl类](interface和abstract classs.md)
+[abstract类和interface] (Java/interface和abstract classs.md)  
 
 ### 实例变量，局部变量，类变量，final变量的区别
 
@@ -141,13 +144,19 @@ Switch的作用类型
 equals与==的区别
 
 try catch finally，try里有return，finally还执行么？
-类的加载机制和初始化机制
+
+### 类的加载机制和初始化机制
+
+### 数据在内存中的存储
 
 
-进程和线程的区别；多线程与线程池
+
+
+### 同步和异步
 数据一致性如何保证；Synchronized关键字，类锁，方法锁，重入锁
 同步的方法；多进程开发以及多进程应用场景
 服务器只提供数据接收接口，在多线程或多进程条件下，如何保证数据的有序到达
+
 ### ThreadLocal原理，实现及如何保证Local属性
 
 ### String StringBuilder StringBuffer对比
@@ -178,7 +187,7 @@ Map、Set、List、Queue、Stack的特点与用法
 HashMap源码分析
 
 ### IO流
-[IO流知识](/Java/IO流.md)  
+[IO流知识](Java/IO流.md)  
 
 Hashcode的作用
 
@@ -187,7 +196,7 @@ Hashcode的作用
 
 ### 线程
 多线程下生产者消费者问题的五种同步方法实现
-
+多线程与线程池
 实现多线程的两种方法
 ThreadLocal的使用规则和源码分析
 
@@ -235,22 +244,23 @@ http://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=2649547702&idx=1&sn=431dcb8
 
  http://blog.csdn.net/sinat_35512245/article/details/59056120
 
->问：如果main方法被声明为private会怎样？  
->>答：能正常编译，但运行的时候会提示”main方法不是public的”。
+问：如果main方法被声明为private会怎样？  
+>答：能正常编译，但运行的时候会提示”main方法不是public的”。
 
-
+<a href="#top" style="display:block;text-align:right;">返回顶部</a>
 <hr width=100% size=3 color=#d8d8d8>
 
 <h1 id="2">二、Android</h1>  
 ### 面试
-#### Android开机过程：
+
+#### Android开机过程：  
 * BootLoder引导,然后加载Linux内核.
 * 0号进程init启动.加载init.rc配置文件,配置文件有个命令启动了zygote进程
 * zygote开始fork出SystemServer进程
 * SystemServer加载各种JNI库,然后init1,init2方法,init2方法中开启了新线程ServerThread.
 * 在SystemServer中会创建一个socket客户端，后续AMS（ActivityManagerService）会通过此客户端和zygote通信
 * ServerThread的run方法中开启了AMS,还孵化新进程ServiceManager,加载注册了一溜的服务,最后一句话进入loop 死循环
-run方法的SystemReady调用resumeTopActivityLocked打开锁屏界面
+run方法的SystemReady调用resumeTopActivityLocked打开锁   屏界面
 
 #### App启动过程：
 
@@ -332,6 +342,7 @@ GC
 进程保活
 AsyncTask
 
+Serializable 和Pacleable
 Handler Message Looper
 IntentService和Service  HandlerThread ServiceHandler 
 Parcelable和Serializable
@@ -405,6 +416,7 @@ XML解析（DOM、SAX、Pull的区别和优缺点）
 https://hit-alibaba.github.io/interview
 https://github.com/karmalove/AndroidInterview
 
+<a href="#top" style="display:block;text-align:right;">返回顶部</a>
 <hr width=100% size=3 color=#d8d8d8>
 
 <h1 id="3">数据结构</h1>  
@@ -443,6 +455,7 @@ N * N的方格纸,里面有多少个正方形
 
 字符串的nextval和next KMP算法
 
+<a href="#top" style="display:block;text-align:right;">返回顶部</a>
 <hr width=100% size=3 color=#d8d8d8>
 
 <h2 id="4">算法</h2>
@@ -476,6 +489,7 @@ http://www.trinea.cn/android/java-annotation-android-open-source-analysis/
 http://www.tuicool.com/articles/QB73eyf
 https://gist.github.com/errord/7801466
 
+<a href="#top" style="display:block;text-align:right;">返回顶部</a>
 <hr width=100% size=3 color=#d8d8d8>
 
 <h1 id="5">计算机基础</h1>
@@ -514,7 +528,7 @@ sql语句：
 5.共享内存
 6.套接字
 
-#OS
+# OS
 
 **进程和线程**
 
