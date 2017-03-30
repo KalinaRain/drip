@@ -61,6 +61,19 @@ Java是面向对象编程（OOP），因此，面向对象的相关知识如三�
 
 ### 不同编码下字母与中文的大小
 
+### 基础
+Object有哪些公用方法？
+
+Override和Overload的使用规则和区别
+
+Switch的作用类型
+能否用string做参数？
+
+equals与==的区别
+
+异常捕获——try catch finally
+try里有return，finally还执行么？
+
 >一个 ".java" 源文件中是否可以包括多个类（不是内部类）？有什么限制？  
 可以有多个类，但只能有一个 public 的类(除了内部类)，并且 public 的类名必须与文件名相一致。
 
@@ -94,7 +107,7 @@ Java是面向对象编程（OOP），因此，面向对象的相关知识如三�
 是否可以从一个静态（static）方法内部发出对非静态（non-static）方法的调用？
 >答：不可以，静态方法只能访问静态成员，因为非静态方法的调用要先创建对象，因此在调用静态方法时可能对象并没有被初始化。
 
- 如何实现对象克隆？
+如何实现对象克隆？
 >答：有两种方式：   
 1.实现 Cloneable 接口并重写 Object 类中的 clone() 方法；  
 2.实现 Serializable 接口，通过对象的序列化和反序列化实现克隆，可以实现真正的深度克隆。
@@ -133,21 +146,29 @@ transient变量不会进行序列化。例如一个实现Serializable接口的�
 | default|  √   |  √ |  × |  ×  |
 | private|  √   |  × |  × |  ×  |
 
-### 基础
-Object有哪些公用方法？
 
-Override和Overload的使用规则和区别
+### 类的加载机制和初始化顺序
+[类的加载机制](类的加载机制.md)
 
-Switch的作用类型
-能否用string做参数？
+类的初始化顺序
+父类--非静态代码块
+父类--构造函数
+父类--静态代码块
+父类--非静态代码块
+父类--构造函数
+子类--非静态代码块
+子类--构造函数
+子类--静态代码块
+父类--非静态代码块
+父类--构造函数
+子类--非静态代码块
+子类--构造函数
 
-equals与==的区别
 
-try catch finally，try里有return，finally还执行么？
+### java字节码
+[java字节码](http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&mid=2247483835&idx=1&sn=68eabd1942b04c7bff8f8cfa63378996&chksm=96cda0f6a1ba29e0ced05a08f2468fd3eaa7785f3cb5821150aae3401f06a6511b7292665664&mpshare=1&scene=23&srcid=0320XHoLsiJgc4k13ZbepW7h#rd&utm_source=gank.io&utm_medium=email)
 
-### 类的加载机制和初始化机制
-
-### 数据在内存中的存储
+### 内存分配
 
 
 
@@ -399,9 +420,14 @@ android中图片缓存
 
 activity切换动画
 
+权限申请：
+- [Android 6.0运行时权限简析及最佳实践](http://www.jianshu.com/p/cdcbd3038902)
+
 贝赛尔曲线（安卓水波运动效果）
 
 性能优化
+[Android性能优化（六）之卡顿那些事](https://mp.weixin.qq.com/s?chksm=eb44df3edc335628dfafc7876587d5c8bead4908a6bd3649e3e6d05ecf8f69d47f37bcc1dfed&sn=41275db0753d895f0bafedf4026c9149&scene=23&idx=1&mpshare=1&utm_source=gank.io&__biz=MzI3OTU3OTQ1Mw%3D%3D&mid=2247483756&srcid=0327YnopZIlDAyjEVlv1uZC1&utm_medium=email#rd)  
+
 启动加速
 布局性能优化(include, viewstub, merge)
 OOM
@@ -410,7 +436,11 @@ OOM
 XML解析（DOM、SAX、Pull的区别和优缺点）
 
 ### 热修复
+[Robust](https://mp.weixin.qq.com/s?chksm=9772ef54a00566424f0afd77ce2137562f90ec848ccdffe1452eb878014a88f5d70b72d29713&srcid=0328UmbhnqspIjS4Gfp2EAzM&devicetype=iMac+MacBookPro11%2C3+OSX+OSX+10.12.3+build%2816D32%29&uin=MTY5MDI4NDA4Mg%3D%3D&idx=1&mpshare=1&pass_ticket=GrgT4%2F8z5Z6vuV8DwNMI745mbJuCP7SBDnopt58DCKnLlfs5g%2BvWhAParDyJuKDw&mid=2247483865&ascene=0&key=37fbc9f7954b58efd06ddba64843a42ef37539694682aa69cf4255337438ad62c868e2c02bfc92859259bbd4bb968d292f0be3bcd399838671e04765c404389ec03adbfc87726a1e41d91c2eacd129cc&sn=55a2fbadf4ecf9ffed1f66180e8c1f73&fontScale=100&scene=1&nettype=WIFI&utm_source=gank.io&__biz=MzIwOTQ1MjAwMg%3D%3D&utm_medium=email&version=12020110) (https://github.com/Meituan-Dianping/Robust ,Robust是美团点评团队在2017年3月开源的热修复框架，和阿里的AndFix不同，Robust不用依赖JNI层，直接通过Java层代码就可以实现热修复。)
+[AndFix]
 
+### 混合编译
+[Android N混合编译与对热补丁影响解析](http://mp.weixin.qq.com/s?sn=054d595af6e824cbe4edd79427fc2706&idx=1&scene=1&srcid=0811uOHr2RBQDKF0jKEdL4Vc&utm_source=gank.io&__biz=MzAwNDY1ODY2OQ%3D%3D&mid=2649286341&utm_medium=email##)
 
 除此之外，也有不少大牛将安卓面试的知识点整理过，有兴趣的可以访问看看。
 https://hit-alibaba.github.io/interview
