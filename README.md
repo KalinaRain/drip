@@ -1,9 +1,10 @@
 # drip
-安卓开发点滴记录
-——安卓开发中的常用的库、view、widget以及一些知识总结
+安卓开发点滴记录（欢迎star和watch）
 
-<a href="Android_Interview.md" target="_blank">Android面试知识点整理</a>  
-  
+Android开发工程师面试知识整理：  
+<a href="Android_Interview.md" target="_blank">Android面试知识点整理</a>（整理中）  
+
+安卓开发中的常用的库、view、widget以及一些知识总结  
 [View与Widget](#1) | [动画](#2) | [开发常用](#3) | [架构相关](#4) | [安卓Base封装](#5) | [直播技术](#6) | [实用插件](#7) | [Java深入](#8) |  
  
 <h2 id="1">View与Widget</h2>
@@ -32,11 +33,11 @@
   
 ### 可以展开的TextView：ExpandableTextView
 - [ExpandableTextView](https://github.com/Chen-Sir/ExpandableTextView)（可以展开和收起的TextView，用于多文字显示）
-- [ExpandableTextView](https:/777714141414141414141414141414141414141414/github.com/Manabu-GT/ExpandableTextView)（需要包含TextView和ImageView，感觉没有上面的方便，不过适合自定义单击的图片 v 及其位置）
+- [ExpandableTextView](https://github.com/Manabu-GT/ExpandableTextView)（需要包含TextView和ImageView，感觉没有上面的方便，不过适合自定义单击的图片 v 及其位置）
   
 ### ToggleButton
 - [TriStateToggleButton](https://github.com/BeppiMenozzi/TriStateToggleButton)（具有三种状态的切换开关，也可以只两种状态，包含动画属性）
-- [RMSwitch]（Android 两状态或者三状态Switch 按钮，可以设置按钮的图片，多样式）
+- [RMSwitch](https://github.com/RiccardoMoro/RMSwitch)（Android 两状态或者三状态Switch 按钮，可以设置按钮的图片，多样式）
   
 ### 日历
 - [LightCalendarView](https://github.com/recruit-mp/LightCalendarView)（简洁风格的日历 View）
@@ -105,12 +106,16 @@
 ### 图片选择器
 - [MediaPickerInstagram](https://github.com/NodensN/MediaPickerInstagram)（Material风格的类似 Instagram 的图片选择器，包含图片选择、拍照、视频拍摄）
 - [AwesomeImagePicker](https://github.com/myinnos/AwesomeImagePicker)（Material风格的图片选择器，包括图片和gif，能够多选）
-
+- [Album](https://github.com/yanzhenjie/Album)（图片选择器，在底部可以选择文件夹）
+  
 ### 加载（过程、失败）
 - [stateLayout](https://github.com/fingdo/stateLayout)（加载的替换layout，可以替换layout中的内容）
   
 ### 密码
 - [LolliPin](https://github.com/OrangeGangsters/LolliPin)（为应用程序提供pin密码，包含数字和指纹识别）
+
+### 管理库
+- [spruce-android](https://github.com/willowtreeapps/spruce-android)（动画管理库）
   
 ***
 <h2 id="4">架构相关</h2>
@@ -165,6 +170,7 @@
 - [LogUtils](http://www.jianshu.com/p/b806d014162c)（日志工具类）
 - [AppMethodOrder](https://github.com/zjw-swun/AppMethodOrder)（能了解所有函数调用顺序的Android库，很牛逼的说）
 - [awesome-ocr](https://github.com/wanghaisheng/awesome-ocr)（文字识别）
+- [BlockCanaryEx](https://github.com/seiginonakama/BlockCanaryEx)（记录线程和每个线程函数执行时间，从而找到影响效率的地方）
   
 ***
 <h2 id="8">java深入</h2>

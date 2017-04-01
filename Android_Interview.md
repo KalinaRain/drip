@@ -30,16 +30,16 @@
 ## Java面向对象
 Java是面向对象编程（OOP），因此，面向对象的相关知识如三大特征和六大基本原则也是需要掌握的。  
 [Java之面向对象编程](Java/Java之面向对象编程.md)  
-
+ 
 ### 重载和覆写
-对于重载和覆写，除了基本知识外，最重要的就是子类和父类中重载和覆写需要注意的事项。  
+对于重载和覆写，除了两者的使用规则和区别外，最重要的就是子类和父类中重载和覆写需要注意的事项。  
 [重载和覆写](Java/重载和覆写.md)
 
-### Java语法基础
+## Java语法基础
 
 #### 8种基本数据类型的大小，以及他们的封装类  
 |数据类型|大小(字节)|   范围    |封装类|
-|:------:|:----:| :----:|---|
+|:------:|:--------:| :--------:|:----:|
 |byte    |   1  |  -2^7～2^7-1  | Byte |
 |short   |   2  | -2^15～2^15-1 |Short|
 |int     |   4  | -2^31～2^31-1 |Integer|
@@ -54,6 +54,9 @@ Java是面向对象编程（OOP），因此，面向对象的相关知识如三�
 自动装箱是 Java 编译器在基本数据类型和对应的对象包装类型之间做的一个转化。比如：把 int 转化成 Integer ，double 转化成 Double，等等。反之就是自动拆箱。
 
 #### 运算符的优先级
+
+#### & 和 && 以及 | 和 ||
+
 #### 值传递和引用传递
 对象被值传递，意味着传递了对象的一个副本。因此，就算是改变了对象副本，也不会影响源对象的值。  
 对象被引用传递，意味着传递的并不是实际的对象，而是对象的引用。因此，外部对引用对象所做的改变会反映到所有的对象上。  
@@ -62,16 +65,14 @@ Java是面向对象编程（OOP），因此，面向对象的相关知识如三�
 ### 不同编码下字母与中文的大小
 
 ### 基础
-Object有哪些公用方法？
+#### Object有哪些公用方法？
 
-Override和Overload的使用规则和区别
 
-Switch的作用类型
-能否用string做参数？
+#### Switch的作用类型？能否用string做参数？
 
-equals与==的区别
+#### equals与==的区别
 
-异常捕获——try catch finally
+#### 异常捕获——try catch finally
 try里有return，finally还执行么？
 
 >一个 ".java" 源文件中是否可以包括多个类（不是内部类）？有什么限制？  
@@ -149,6 +150,7 @@ transient变量不会进行序列化。例如一个实现Serializable接口的�
 
 ### 类的加载机制和初始化顺序
 [类的加载机制](类的加载机制.md)
+http://itfeifei.win/2017/03/14/深入了解Java之类加载和案例分析/
 
 类的初始化顺序
 父类--非静态代码块
@@ -170,7 +172,8 @@ transient变量不会进行序列化。例如一个实现Serializable接口的�
 
 ### 内存分配
 
-
+### 垃圾回收
+http://itfeifei.win/2017/03/15/深入了解Java之垃圾回收/
 
 
 ### 同步和异步
@@ -199,7 +202,7 @@ transient变量不会进行序列化。例如一个实现Serializable接口的�
 
 ### Collection（Set|List）与Map
 [Collection与Map](Collection与Map.md)
-Map、Set、List、Queue、Stack的特点与用法
+Map、Set、List、Queue、Stack的特点与用法, 集合框架的层次结构和使用规则梳理
 
 ### Excption与Error包结构,OOM和SOF
 
@@ -218,6 +221,7 @@ Hashcode的作用
 ### 线程
 多线程下生产者消费者问题的五种同步方法实现
 多线程与线程池
+线程池：http://www.jianshu.com/p/47e903ab1bec
 实现多线程的两种方法
 ThreadLocal的使用规则和源码分析
 
@@ -230,8 +234,6 @@ wait()和sleep()的区别
 
 四种引用，强弱软虚，用到的场景
 
-
-集合框架的层次结构和使用规则梳理
 
 static的作用和意义
 
@@ -270,7 +272,7 @@ http://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=2649547702&idx=1&sn=431dcb8
 
 <a href="#top" style="display:block;text-align:right;">返回顶部</a>
 <hr width=100% size=3 color=#d8d8d8>
-
+--------------------------------------------------------------------------------------------------------
 <h1 id="2">二、Android</h1>  
 ### 面试
 
@@ -348,10 +350,8 @@ Binder
 AIDL
 VIew绘制
 事件分发机制
-
-jvm
-
-GC
+#### IPC
+http://qlm.pw/2017/03/14/android-ipc-机制/
 
 ### 产品架构 MVP MVC MVVM
 ### Android中设计模式的应用与Android 源码中的设计模式
@@ -362,6 +362,8 @@ GC
 内存泄露
 进程保活
 AsyncTask
+Android de Monitor:
+http://rkhcy.github.io/2017/02/14/Android%20Monitor/
 
 Serializable 和Pacleable
 Handler Message Looper
@@ -420,6 +422,9 @@ android中图片缓存
 
 activity切换动画
 
+图片（三级缓存）
+https://mp.weixin.qq.com/s?sn=8b25e2915c72aacdf2e1cfa38aa1cb87&mpshare=1&srcid=0316pLW7Dlj2Y0bHTIUNHY2D%23rd&__biz=MzI3OTU3OTQ1Mw%3D%3D&utm_source=gank.io&scene=23&mid=2247483753&idx=1&utm_medium=email&chksm=eb44df3bdc33562d7784753776ba820361d71228b0081e66661c6070008c0038bbabf0558ab8
+
 权限申请：
 - [Android 6.0运行时权限简析及最佳实践](http://www.jianshu.com/p/cdcbd3038902)
 
@@ -432,7 +437,7 @@ activity切换动画
 布局性能优化(include, viewstub, merge)
 OOM
 电量
-
+http://blog.csdn.net/dd864140130/article/details/62431927
 XML解析（DOM、SAX、Pull的区别和优缺点）
 
 ### 热修复
@@ -448,7 +453,7 @@ https://github.com/karmalove/AndroidInterview
 
 <a href="#top" style="display:block;text-align:right;">返回顶部</a>
 <hr width=100% size=3 color=#d8d8d8>
-
+--------------------------------------------------------------------------------------------------------
 <h1 id="3">数据结构</h1>  
 堆和栈在内存中的区别是什么(数据结构方面以及实际实现方面)
 最快的排序算法是哪个？给阿里2万多名员工按年龄排序应该选择哪个算法？堆和树的区别；写出快排代码；链表逆序代码
@@ -487,7 +492,7 @@ N * N的方格纸,里面有多少个正方形
 
 <a href="#top" style="display:block;text-align:right;">返回顶部</a>
 <hr width=100% size=3 color=#d8d8d8>
-
+--------------------------------------------------------------------------------------------------------
 <h2 id="4">算法</h2>
 >对于算法，本人一直认为这是个很高大上的东西，而且事实上他也确实很高大上，如果真的要想提升自己的算法水平，最好是去刷题，单纯的看别人的博客，效果不是很大。目前比较出名的算法刷题网站（online judge）有[lintcode](http://www.lintcode.com/zh-cn/)、 [leetcode](https://leetcode.com/)、 [hihocoder](http://hihocoder.com/)，以及各大高校的网站[参考](http://www.cnblogs.com/Xredman/archive/2009/03/23/1420015.html)。
 
@@ -521,13 +526,19 @@ https://gist.github.com/errord/7801466
 
 <a href="#top" style="display:block;text-align:right;">返回顶部</a>
 <hr width=100% size=3 color=#d8d8d8>
-
+--------------------------------------------------------------------------------------------------------
 <h1 id="5">计算机基础</h1>
-### 计算机网络
+## 计算机网络
 
-Http TCP/IP 
-TCP与UDP的区别
-TCP的三次握手和四次挥手
+### Http
+[Http](Http.md)  
+TCP/IP   
+TCP与UDP
+[TCP和UDP](TCP和UDP.md)
+TCP与UDP各自的特点和区别是计算机网络中常考的热点  
+TCP的三次握手和四次挥手  
+https://hit-alibaba.github.io/interview/basic/network/TCP.html  
+
 HTTP协议；HTTP1.0与2.0的区别；HTTP报文结构
 HTTP与HTTPS的区别以及如何实现安全性
 
