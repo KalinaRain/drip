@@ -8,17 +8,43 @@
 <hr width=100% size=3 color=#d8d8d8>
 
 # <p id="top">目录</p>  
-[一、Java](#1)  
+[一、Java](#1)
 * Java基本概念
-* Java面向对象  
+* Java面向对象
+* Java语法基础
+* 类的加载机制和初始化顺序
+* IO
+* 集合
+* 线程
+* 反射
+* GC（垃圾回收）
+* 面试高频问题
 
 [二、Android](#2)  
+* 四大组件
+* 图片缓存
+* View
+* 通信机制
+* 性能优化
+* 热修复
 
 [三、数据结构](#3)  
 
 [四、算法](#4)  
+* 时间复杂度和空间复杂度
+* 排序
+* 字符串
+* 队列和栈
+* 链表
+* 二分搜索
+* 二叉树
+* 位运算
+* 动态规划
+* 大数据相关
+* 概率和排列组合
 
 [五、计算机基础](#5)  
+* 计算机网络
 
 <hr width=100% size=3 color=#d8d8d8>
 
@@ -497,8 +523,10 @@ N * N的方格纸,里面有多少个正方形
 <h2 id="4">算法</h2>
 >对于算法，本人一直认为这是个很高大上的东西，而且事实上他也确实很高大上，如果真的要想提升自己的算法水平，最好是去刷题，单纯的看别人的博客，效果不是很大。目前比较出名的算法刷题网站（online judge）有[lintcode](http://www.lintcode.com/zh-cn/)、 [leetcode](https://leetcode.com/)、 [hihocoder](http://hihocoder.com/)，以及各大高校的网站[参考](http://www.cnblogs.com/Xredman/archive/2009/03/23/1420015.html)。
 
-Trie树  
+PS.由于本人学的是Android，而Android一般又是Java编写，再加上本人又不是正宗的计算机出身（自学成才），因此所有的算法实现都是使用的Java，但面试者如果会 C 和 C++ 就更好了。
 
+Trie树  
+算法参考网站：  
 https://github.com/Dev-XYS/Algorithms  
 https://leetcode.com/problemset/algorithms/  
 http://blog.csdn.net/v_july_v/article/details/6543438  
@@ -510,6 +538,7 @@ https://github.com/shawnfan/LintCode
 http://hihocoder.com/problemset  
 http://www.lintcode.com/zh-cn/problem/  
 https://nanti.jisuanke.com/  
+
 排序
 https://zhuanlan.zhihu.com/p/25498681
 https://juejin.im/post/5874bff0128fe1006b443fa0
