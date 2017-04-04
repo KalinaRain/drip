@@ -173,8 +173,8 @@ http://itfeifei.win/2017/03/14/深入了解Java之类加载和案例分析/
 ### 内存分配
 
 ### 垃圾回收
-http://itfeifei.win/2017/03/15/深入了解Java之垃圾回收/
-
+JVM的垃圾回收算法一直是面试过程中的热点
+[GC——垃圾回收](Java/JVM_GC.md)
 
 ### 同步和异步
 数据一致性如何保证；Synchronized关键字，类锁，方法锁，重入锁
@@ -463,6 +463,7 @@ https://github.com/karmalove/AndroidInterview
 蚁群算法与蒙特卡洛算法
 写出你所知道的排序算法及时空复杂度，稳定性
 百度POI中如何试下查找最近的商家功能(坐标镜像+R树)
+https://zhuanlan.zhihu.com/p/25719965
 
 哈弗曼树（建立）
 建堆

@@ -1,5 +1,5 @@
 # drip
-安卓开发点滴记录（欢迎star和watch）
+安卓开发 点滴记录（欢迎star和watch）
 
 Android开发工程师面试知识整理：  
 <a href="Android_Interview.md" target="_blank">Android面试知识点整理</a>（整理中）  
@@ -33,18 +33,22 @@ Android开发工程师面试知识整理：
   
 ### 可以展开的TextView：ExpandableTextView
 - [ExpandableTextView](https://github.com/Chen-Sir/ExpandableTextView)（可以展开和收起的TextView，用于多文字显示）
-- [ExpandableTextView](https://github.com/Manabu-GT/ExpandableTextView)（需要包含TextView和ImageView，感觉没有上面的方便，不过适合自定义单击的图片 v 及其位置）
+- [ExpandableTextView](https://github.com/Manabu-GT/ExpandableTextView)（需要包含TextView和ImageView，感觉没有上面的方便，不过适合自定义单击的图片及其位置）
   
 ### ToggleButton
 - [TriStateToggleButton](https://github.com/BeppiMenozzi/TriStateToggleButton)（具有三种状态的切换开关，也可以只两种状态，包含动画属性）
 - [RMSwitch](https://github.com/RiccardoMoro/RMSwitch)（Android 两状态或者三状态Switch 按钮，可以设置按钮的图片，多样式）
+- [Android-SwitchIcon](https://github.com/zagum/Android-SwitchIcon)（在自身图标上通过颜色的改变来显示关闭和开启的两种状态的switch控件）
   
 ### 日历
 - [LightCalendarView](https://github.com/recruit-mp/LightCalendarView)（简洁风格的日历 View）
+- [OneCalendarView](https://github.com/MorochoRochaDarwin/OneCalendarView)（该日历组件还是相当新颖的）
+- [material-calendarview](https://github.com/prolificinteractive/material-calendarview)（日历组件，感觉UI和效果基本上和一些手机上原装的日历差不多）
   
 ### RecyclerView、ListView、GridView的封装
 - [EasyRecyclerView](https://github.com/Jude95/EasyRecyclerView)（包含上拉加载和下拉刷新、EmptyView、showProgress、showError）
 - [侧滑RecyclerView](http://www.jianshu.com/p/af9f940d8d1c)（含侧滑的RecyclerView）
+- [excelPanel](https://github.com/zhouchaoyuan/excelPanel)（二维的RecyclerView，像excel表格,自带监听）
   
 ### dialog
 - [material-dialogs](https://github.com/afollestad/material-dialogs)（对dialog很好的封装，不过使用教程比较多，接入略微复杂点）
@@ -69,6 +73,7 @@ Android开发工程师面试知识整理：
 - [recyclerview-animators](https://github.com/wasabeef/recyclerview-animators)（RecyclerView相关动画）
 - [AndroidViewAnimations](https://github.com/daimajia/AndroidViewAnimations)（daimajia大神的，各种动画，nice）
 - [AndroidSwipeLayout](https://github.com/daimajia/AndroidSwipeLayout)（listview和RecyclerView的滑动删除、收藏）
+- [lottie-android](https://github.com/airbnb/lottie-android)（该库可以通过Adobe After Effects做出动画效果然后导出为json文件，利用LottieAnimationView可以在安卓中加载为动画效果，不受限于安卓平台，动画效果可以很多）
   
 ***
 <h2 id="3">开发常用</h2>
@@ -86,11 +91,15 @@ Android开发工程师面试知识整理：
 
 ### 抽屉
 - [SlidingRootNav](https://github.com/yarolegovich/SlidingRootNav)（类似以前QQ的侧边抽屉，会改变大小的那种）
+- [ArcNavigationView](https://github.com/rom4ek/ArcNavigationView)（一个有弯曲边缘效果的NavigationView控件，不过我个人觉得可能有点反人类，大家见仁见智吧）
 
 ### ViewPager相关
 - [PageIndicatorView](https://github.com/romandanylyk/PageIndicatorView)（An page indicator for Android ViewPager）
 - [PagerSlidingTabStrip](https://github.com/jpardogo/PagerSlidingTabStrip)（Material Design风格，感觉和TabLayout实现的差不多）
 - [ViewPagerIndicator](https://github.com/JakeWharton/ViewPagerIndicator)（很久的了，我觉得官方新出的一些都比这个好）
+
+### CoordinatorTabLayout
+- [CoordinatorTabLayout](https://github.com/hugeterry/CoordinatorTabLayout)（可以快速实现TabLayout和CoordinatorLayout的组合效果）
 
 ### 滑动关闭页面
 - [SwipeBackLayout](https://github.com/ikew0ng/SwipeBackLayout)（从上下左右四个方向滑动关闭Activity，可以设置首页不滑动 setSwipeBackEnable(false)，不过activity需要设置透明主题）
@@ -107,9 +116,10 @@ Android开发工程师面试知识整理：
 - [MediaPickerInstagram](https://github.com/NodensN/MediaPickerInstagram)（Material风格的类似 Instagram 的图片选择器，包含图片选择、拍照、视频拍摄）
 - [AwesomeImagePicker](https://github.com/myinnos/AwesomeImagePicker)（Material风格的图片选择器，包括图片和gif，能够多选）
 - [Album](https://github.com/yanzhenjie/Album)（图片选择器，在底部可以选择文件夹）
+- [boxing](https://github.com/Bilibili/boxing)（boxing是B站出品的一个多媒体选择器库，可以选择一张或者多张图片，提供预览和裁剪功能。同样支持gif图，选择视频和图像压缩功能。）
   
 ### 加载（过程、失败）
-- [stateLayout](https://github.com/fingdo/stateLayout)（加载的替换layout，可以替换layout中的内容）
+- [stateLayout](https://github.com/fingdo/stateLayout)（加载的替换layout，可以替换layout中的内容，类似于EmptyView之类的）
   
 ### 密码
 - [LolliPin](https://github.com/OrangeGangsters/LolliPin)（为应用程序提供pin密码，包含数字和指纹识别）
@@ -117,6 +127,13 @@ Android开发工程师面试知识整理：
 ### 管理库
 - [spruce-android](https://github.com/willowtreeapps/spruce-android)（动画管理库）
   
+### app shortcuts
+- [shortbread](https://github.com/MatthiasRobbers/shortbread)（自Android 7.0后，用户可以长按桌面图标弹出快捷菜单，该库可以帮助开发者快速开发app shortcuts）
+  
+### 著名开源库
+- [vlayout](https://github.com/alibaba/vlayout)（阿里巴巴开源的项目——VirtualLayout是一个针对RecyclerView的LayoutManager扩展, 主要提供一整套布局方案和布局间的组件复用的问题。说白了就是对复杂布局的解决方案）
+- [atlas](http://atlas.taobao.org/index.html)（带你重返App开发的田园时代——其实就是为开发者解决繁杂的业务关系和一些迭代与集成问题，总之，挺厉害的）
+
 ***
 <h2 id="4">架构相关</h2>
 
@@ -148,6 +165,7 @@ Android开发工程师面试知识整理：
 - [PLDroidPlayer](https://github.com/pili-engineering/PLDroidPlayer)（ Android 平台的音视频播放器 SDK，可高度定制化和二次开发）
 - [ijkplayer](https://github.com/Bilibili/ijkplayer)（Bilibili的Android/iOS video player ）
 - [pili-ijkplayer](https://github.com/pili-engineering/pili-ijkplayer)(pili-engineering的Android/iOS video player)
+- [PreviewSeekBar](https://github.com/rubensousa/PreviewSeekBar)（看视频时，拖动进度条可以预览当前帧的画面）
 
 ### 弹幕
 - [Barrage](https://github.com/OctavianLee/Barrage)（一个开源的b站直播间弹幕助手，主播可以获取直播间内弹幕信息且可以进行发送弹幕功能）
@@ -161,6 +179,7 @@ Android开发工程师面试知识整理：
 
 ### Android Studio插件
 - [JRebel](https://zeroturnaround.com/software/jrebel-for-android/features/)（Android 高效开发调试神器 JRebel，效率比Instant Run高且稳定）
+- [here-be-dragons](https://github.com/anupcowkur/here-be-dragons)（用注解把那些恶心的，或者有 Hack 功能的代码标注出来，每次调用时 IDE 都会提醒这个函数调用有潜在风险）
 
 ### 安全相关
 - [condom](https://github.com/oasisfeng/condom)（一个超轻超薄的Android工具库，阻止三方SDK中常见的严重影响用户体验的『链式唤醒』行为。（对应用自身的功能无影响））
