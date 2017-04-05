@@ -11,14 +11,32 @@
 [一、Java](#1)
 * Java基本概念
 * Java面向对象
-* Java语法基础
-* 类的加载机制和初始化顺序
+* [Java语法基础](#java_foundation)
+	* 8种基本数据类型的大小及其封装类
+	* 运算符的优先级
+	* & 和 && 以及 | 和 ||
+	* 值传递和引用传递
+	* 访问修饰符的区别
+	* 不同编码下字母与中文的大小
+	* 实例变量，局部变量，类变量，final变量的区别
+	* 几个关键字 volatile、transient、synchronized、native
+* interface和abstract类
 * IO
 * 集合
-* 线程
-* 反射
+* [线程](#java_thread)
+* [反射](#java_reflect)
+* [泛型](#java_generic)
+* [GC和内存分配策略](#GC)
+	* 对象是否已死
+	* GC算法（标记-清除、复制、标记-整理、分代收集）
+	* HotSpot的算法实现
+	* 内存分配与回收策略
+	* 垃圾收集器
+* [虚拟机类加载机制](#class_load)
+	* 类加载的过程（加载、验证、准备、解析、初始化五个步骤）
+	* 类加载器（类与类、双亲委派、破坏双亲委派）
 * GC（垃圾回收）
-* 面试高频问题
+* [其他面试高频问题](#java_other_interview)
 
 [二、Android](#2)  
 * 四大组件
@@ -61,9 +79,9 @@ Java是面向对象编程（OOP），因此，面向对象的相关知识如三�
 对于重载和覆写，除了两者的使用规则和区别外，最重要的就是子类和父类中重载和覆写需要注意的事项。  
 [重载和覆写](Java/重载和覆写.md)
 
-## Java语法基础
+<h2 id="java_foundation">Java语法基础</h2>
 
-#### 8种基本数据类型的大小，以及他们的封装类  
+#### 8种基本数据类型的大小，以及他们的封装类
 |数据类型|大小(字节)|   范围    |封装类|
 |:------:|:--------:| :--------:|:----:|
 |byte    |   1  |  -2^7～2^7-1  | Byte |
@@ -75,7 +93,7 @@ Java是面向对象编程（OOP），因此，面向对象的相关知识如三�
 |boolean |   1  |  true或false  |Boolean|
 |char    |   2  |从字符型对应的整型数来划分，其表示范围是0～65535||
 
-整数默认int，小数默认double
+整数默认int，带小数的默认double
 
 自动装箱是 Java 编译器在基本数据类型和对应的对象包装类型之间做的一个转化。比如：把 int 转化成 Integer ，double 转化成 Double，等等。反之就是自动拆箱。
 
@@ -88,9 +106,157 @@ Java是面向对象编程（OOP），因此，面向对象的相关知识如三�
 对象被引用传递，意味着传递的并不是实际的对象，而是对象的引用。因此，外部对引用对象所做的改变会反映到所有的对象上。  
 所有的基本数据类型都是值传递，而
 
-### 不同编码下字母与中文的大小
+#### 不同编码下字母与中文的大小
 
-### 基础
+
+#### 访问修饰符public protected private default（不写）的区别：
+|修饰符  |当前类 |同包 |子类 |其他包|
+|:------:|:-----:|:---:|:---:|:----:|
+| public |  √   |  √ |  √ |  √  |
+|protected| √   |  √ |  √ |  ×  |
+| default|  √   |  √ |  × |  ×  |
+| private|  √   |  × |  × |  ×  |
+
+#### 实例变量，局部变量，类变量，final变量的区别
+
+#### 几个关键字 volatile、transient、synchronized、native  
+transient变量不会进行序列化。例如一个实现Serializable接口的类在序列化到ObjectStream的时候，transient类型的变量不会被写入流中，同时，反序列化回来的时候，对应变量的值为null。
+
+### interface和abstract类
+[interface和abstract类](Java/抽象类和interface.md)  
+
+
+### IO流
+[IO流知识](Java/IO流.md)  
+
+### Collection（Set | List）与Map
+[Collection与Map](Collection与Map.md)  
+Map、Set、List、Queue、Stack的特点与用法, 集合框架的层次结构和使用规则梳理
+
+<h2 id="java_thread">线程</h2>
+多线程下生产者消费者问题的五种同步方法实现
+多线程与线程池
+线程池：http://www.jianshu.com/p/47e903ab1bec
+实现多线程的两种方法
+ThreadLocal的使用规则和源码分析
+### ThreadLocal原理，实现及如何保证Local属性
+ThreadPool用法与示例
+wait()和sleep()的区别
+线程同步的方法：sychronized、lock、reentrantLock分析
+
+<h2 id="java_reflect">java反射</h2>
+
+<h2 id="java_callback">java回调</h2>
+<h2 id="java_generic">Java泛型</h2>
+
+<h2 id="GC">GC和内存分配策略</h2>
+### java字节码
+[java字节码](http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&mid=2247483835&idx=1&sn=68eabd1942b04c7bff8f8cfa63378996&chksm=96cda0f6a1ba29e0ced05a08f2468fd3eaa7785f3cb5821150aae3401f06a6511b7292665664&mpshare=1&scene=23&srcid=0320XHoLsiJgc4k13ZbepW7h#rd&utm_source=gank.io&utm_medium=email)
+
+### 对象是否已死
+### GC算法
+JVM的垃圾回收算法一直是面试过程中的热点
+[GC——垃圾回收](Java/JVM_GC.md)
+
+### HotSpot的算法实现
+
+### 内存分配与回收策略
+
+### 垃圾收集器
+
+
+<h2 id="class_load">类的加载机制和初始化顺序</h2>
+[类的加载机制](类的加载机制.md)
+http://itfeifei.win/2017/03/14/深入了解Java之类加载和案例分析/
+
+类的初始化顺序
+父类--非静态代码块
+父类--构造函数
+父类--静态代码块
+父类--非静态代码块
+父类--构造函数
+子类--非静态代码块
+子类--构造函数
+子类--静态代码块
+父类--非静态代码块
+父类--构造函数
+子类--非静态代码块
+子类--构造函数
+
+### 同步和异步
+数据一致性如何保证；Synchronized关键字，类锁，方法锁，重入锁
+同步的方法；多进程开发以及多进程应用场景
+服务器只提供数据接收接口，在多线程或多进程条件下，如何保证数据的有序到达
+
+
+### String StringBuilder StringBuffer对比
+
+
+接口与回调；回调的原理；写一个回调demo；
+
+#### 泛型原理，举例说明；
+
+解析与分派
+
+
+
+***
+
+静态属性和静态方法是否可以被继承？是否可以被重写？原因
+
+修改对象A的equals方法的签名，那么使用HashMap存放这个对象实例的时候，会调用哪个equals方法
+
+
+### Excption与Error包结构,OOM和SOF
+
+### HashMap和HashTable的区别
+
+HashMap源码分析
+
+Hashcode的作用
+
+
+从源码分析String、StringBuffer与StringBuilder区别和联系
+
+
+
+方法锁、对象锁和类锁的意义和区别
+
+四种引用，强弱软虚，用到的场景
+
+
+static的作用和意义
+
+多态实现的JVM调用过程
+
+
+
+
+java 新特性
+
+Java IO与NIO
+
+foreach与正常for循环效率对比
+
+多线程
+http://droidyue.com/blog/2014/12/21/string-literal-pool-in-java/
+http://droidyue.com/blog/2014/12/07/differences-between-stack-and-heap-in-java/
+http://droidyue.com/blog/2014/12/21/java-runtime-data-areas/
+http://www.importnew.com/18548.html
+
+java 面试整理：
+https://sunchenglong.gitbooks.io/java-interview  
+
+java面试一定会遇到的56个面试题：
+http://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=2649547702&idx=1&sn=431dcb8cef6518fd852c32b57d79d538&scene=21#wechat_redirect
+
+ http://blog.csdn.net/sinat_35512245/article/details/59056120
+
+问：如果main方法被声明为private会怎样？  
+>答：能正常编译，但运行的时候会提示”main方法不是public的”。
+
+
+<h2 id="java_other_interview">其他面试高频问题</h2>
 #### Object有哪些公用方法？
 
 
@@ -156,145 +322,6 @@ java.net: 这里面是与网络有关的类，比如 URL,URLConnection 等。
 java.util: 这个是系统辅助类，特别是集合类 Collection,List,Map 等。  
 java.sql: 这个是数据库操作的类，Connection, Statememt，ResultSet 等
 
-
-### 几个关键字volatile、transient、synchronized、native  
-transient变量不会进行序列化。例如一个实现Serializable接口的类在序列化到ObjectStream的时候，transient类型的变量不会被写入流中，同时，反序列化回来的时候，对应变量的值为null。
-
-### abstract类和interface
-[abstract类和interface](Java/抽象类和interface.md)  
-
-### 实例变量，局部变量，类变量，final变量的区别
-
-### 访问修饰符public protected private default（不写）的区别：
-|修饰符  |当前类 |同包 |子类 |其他包|
-|:------:|:-----:|:---:|:---:|:----:|
-| public |  √   |  √ |  √ |  √  |
-|protected| √   |  √ |  √ |  ×  |
-| default|  √   |  √ |  × |  ×  |
-| private|  √   |  × |  × |  ×  |
-
-
-### 类的加载机制和初始化顺序
-[类的加载机制](类的加载机制.md)
-http://itfeifei.win/2017/03/14/深入了解Java之类加载和案例分析/
-
-类的初始化顺序
-父类--非静态代码块
-父类--构造函数
-父类--静态代码块
-父类--非静态代码块
-父类--构造函数
-子类--非静态代码块
-子类--构造函数
-子类--静态代码块
-父类--非静态代码块
-父类--构造函数
-子类--非静态代码块
-子类--构造函数
-
-
-### java字节码
-[java字节码](http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&mid=2247483835&idx=1&sn=68eabd1942b04c7bff8f8cfa63378996&chksm=96cda0f6a1ba29e0ced05a08f2468fd3eaa7785f3cb5821150aae3401f06a6511b7292665664&mpshare=1&scene=23&srcid=0320XHoLsiJgc4k13ZbepW7h#rd&utm_source=gank.io&utm_medium=email)
-
-### 内存分配
-
-### 垃圾回收
-JVM的垃圾回收算法一直是面试过程中的热点
-[GC——垃圾回收](Java/JVM_GC.md)
-
-### 同步和异步
-数据一致性如何保证；Synchronized关键字，类锁，方法锁，重入锁
-同步的方法；多进程开发以及多进程应用场景
-服务器只提供数据接收接口，在多线程或多进程条件下，如何保证数据的有序到达
-
-### ThreadLocal原理，实现及如何保证Local属性
-
-### String StringBuilder StringBuffer对比
-
-
-接口与回调；回调的原理；写一个回调demo；
-
-#### 泛型原理，举例说明；
-
-解析与分派
-
-
-
-***
-
-静态属性和静态方法是否可以被继承？是否可以被重写？原因
-
-修改对象A的equals方法的签名，那么使用HashMap存放这个对象实例的时候，会调用哪个equals方法
-
-### Collection（Set|List）与Map
-[Collection与Map](Collection与Map.md)
-Map、Set、List、Queue、Stack的特点与用法, 集合框架的层次结构和使用规则梳理
-
-### Excption与Error包结构,OOM和SOF
-
-### HashMap和HashTable的区别
-
-HashMap源码分析
-
-### IO流
-[IO流知识](Java/IO流.md)  
-
-Hashcode的作用
-
-
-从源码分析String、StringBuffer与StringBuilder区别和联系
-
-### 线程
-多线程下生产者消费者问题的五种同步方法实现
-多线程与线程池
-线程池：http://www.jianshu.com/p/47e903ab1bec
-实现多线程的两种方法
-ThreadLocal的使用规则和源码分析
-
-ThreadPool用法与示例
-wait()和sleep()的区别
-线程同步的方法：sychronized、lock、reentrantLock分析
-
-
-方法锁、对象锁和类锁的意义和区别
-
-四种引用，强弱软虚，用到的场景
-
-
-static的作用和意义
-
-多态实现的JVM调用过程
-
-
-### java反射
-
-
-java回调
-
-Java泛型
-
-java 新特性
-
-Java IO与NIO
-
-foreach与正常for循环效率对比
-
-多线程
-http://droidyue.com/blog/2014/12/21/string-literal-pool-in-java/
-http://droidyue.com/blog/2014/12/07/differences-between-stack-and-heap-in-java/
-http://droidyue.com/blog/2014/12/21/java-runtime-data-areas/
-http://www.importnew.com/18548.html
-
-java 面试整理：
-https://sunchenglong.gitbooks.io/java-interview  
-
-java面试一定会遇到的56个面试题：
-http://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=2649547702&idx=1&sn=431dcb8cef6518fd852c32b57d79d538&scene=21#wechat_redirect
-
- http://blog.csdn.net/sinat_35512245/article/details/59056120
-
-问：如果main方法被声明为private会怎样？  
->答：能正常编译，但运行的时候会提示”main方法不是public的”。
 
 <a href="#top" style="display:block;text-align:right;">返回顶部</a>
 <hr width=100% size=3 color=#d8d8d8>
