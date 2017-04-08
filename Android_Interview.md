@@ -8,7 +8,7 @@
 <hr width=100% size=3 color=#d8d8d8>
 
 # <p id="top">目录</p>  
-[一、Java](#1)
+[一、Java](#java_title)
 * Java基本概念
 * Java面向对象
 * [Java语法基础](#java_foundation)
@@ -19,9 +19,10 @@
 	* 访问修饰符的区别
 	* 不同编码下字母与中文的大小
 	* 实例变量，局部变量，类变量，final变量的区别
+* [Java之登堂入室](#java_getinto)
 	* 几个关键字 volatile、transient、synchronized、native
-* interface和abstract类
-* IO
+	* interface和abstract类
+	* IO流
 * 集合
 * [线程](#java_thread)
 * [反射](#java_reflect)
@@ -38,7 +39,7 @@
 * GC（垃圾回收）
 * [其他面试高频问题](#java_other_interview)
 
-[二、Android](#2)  
+[二、Android](#android_title)  
 * 四大组件
 * 图片缓存
 * View
@@ -66,7 +67,7 @@
 
 <hr width=100% size=3 color=#d8d8d8>
 
-<h1 id="1">一、Java</h1>
+<h1 id="java_title">一、Java</h1>
 
 ## Java基本概念
 [Java基本概念](Java/Java基本概念.md)  
@@ -104,7 +105,7 @@ Java是面向对象编程（OOP），因此，面向对象的相关知识如三�
 #### 值传递和引用传递
 对象被值传递，意味着传递了对象的一个副本。因此，就算是改变了对象副本，也不会影响源对象的值。  
 对象被引用传递，意味着传递的并不是实际的对象，而是对象的引用。因此，外部对引用对象所做的改变会反映到所有的对象上。  
-所有的基本数据类型都是值传递，而
+所有的基本数据类型和String都是值传递，其他都是引用传递
 
 #### 不同编码下字母与中文的大小
 
@@ -119,8 +120,10 @@ Java是面向对象编程（OOP），因此，面向对象的相关知识如三�
 
 #### 实例变量，局部变量，类变量，final变量的区别
 
-#### 几个关键字 volatile、transient、synchronized、native  
+<h2 id="java_getinto">Java之登堂入室</h2>
+### 几个关键字 volatile、transient、synchronized、native  
 transient变量不会进行序列化。例如一个实现Serializable接口的类在序列化到ObjectStream的时候，transient类型的变量不会被写入流中，同时，反序列化回来的时候，对应变量的值为null。
+http://www.cnblogs.com/lanxuezaipiao/p/3369962.html
 
 ### interface和abstract类
 [interface和abstract类](Java/抽象类和interface.md)  
@@ -132,6 +135,9 @@ transient变量不会进行序列化。例如一个实现Serializable接口的�
 ### Collection（Set | List）与Map
 [Collection与Map](Collection与Map.md)  
 Map、Set、List、Queue、Stack的特点与用法, 集合框架的层次结构和使用规则梳理
+### HashMap和HashTable的区别
+
+HashMap源码分析
 
 <h2 id="java_thread">线程</h2>
 多线程下生产者消费者问题的五种同步方法实现
@@ -147,7 +153,14 @@ wait()和sleep()的区别
 <h2 id="java_reflect">java反射</h2>
 
 <h2 id="java_callback">java回调</h2>
+接口与回调；回调的原理；写一个回调demo；
+
 <h2 id="java_generic">Java泛型</h2>
+#### 泛型原理，举例说明；
+
+<h2>运行时数据区域</h2>
+![运行时数据区](image/运行时数据区.png)  
+首先得知道Java运行时个汇总变量是存储在哪里的，这也是笔试面试中的常考点
 
 <h2 id="GC">GC和内存分配策略</h2>
 ### java字节码
@@ -192,9 +205,9 @@ http://itfeifei.win/2017/03/14/深入了解Java之类加载和案例分析/
 ### String StringBuilder StringBuffer对比
 
 
-接口与回调；回调的原理；写一个回调demo；
 
-#### 泛型原理，举例说明；
+
+
 
 解析与分派
 
@@ -209,9 +222,6 @@ http://itfeifei.win/2017/03/14/深入了解Java之类加载和案例分析/
 
 ### Excption与Error包结构,OOM和SOF
 
-### HashMap和HashTable的区别
-
-HashMap源码分析
 
 Hashcode的作用
 
@@ -275,7 +285,7 @@ try里有return，finally还执行么？
 在程序运行时的区别：实例变量属于某个对象的属性，必须创建了实例对象，其中的实例变量才会被分配空间，才能使用这个实例变量。静态变量不属于某个实例对象，而是属于类，所以也称为类变量，只要程序加载了类的字节码，不用创建任何实例对象，静态变量就会被分配空间，静态变量就可以被使用了。总之，实例变量必须创建对象后才可以通过这个对象来使用，静态变量则可以直接使用类名来引用。
 
 例如，对于下面的程序，无论创建多少个实例对象，永远都只分配了一个 staticVar 变量，并且每创建一个实例对象，这个 staticVar 就会加 1 ；但是，每创建一个实例对象，就会分配一个 instanceVar ，即可能分配多个 instanceVar ，并且每个instanceVar 的值都只自加了 1 次。  
-<pre><code>  
+``` 
  public class VariantTest{   
     public static int staticVar = 0;    
     public int instanceVar = 0;    
@@ -284,7 +294,8 @@ try里有return，finally还执行么？
         instanceVar++;    
         System.out.println(“staticVar=” + staticVar + ”,instanceVar=” + instanceVar);   
         } 
- }    </code></pre>  
+ }
+```
 
 不通过构造函数也能创建对象吗?
 >可以。Java 创建对象的几种方式（重要）：  
@@ -326,7 +337,7 @@ java.sql: 这个是数据库操作的类，Connection, Statememt，ResultSet 等
 <a href="#top" style="display:block;text-align:right;">返回顶部</a>
 <hr width=100% size=3 color=#d8d8d8>
 --------------------------------------------------------------------------------------------------------
-<h1 id="2">二、Android</h1>  
+<h1 id="android_title">二、Android</h1>  
 ### 面试
 
 #### Android开机过程：  
@@ -361,7 +372,7 @@ ART缺点：
 #### 各种Context的区别：  
 * Activity和Service以及Application的Context是不一样的,Activity继承自ContextThemeWraper.其他的继承自ContextWrapper
 * 每一个Activity和Service以及Application的Context都是一个新的ContextImpl对象
-* getApplication()用来获取Application实例的，但是这个方法只有在Activity和Service中才能调用的到。那么也许在绝大多数情况下我们都是在Activity或者Service中使用Application的，但是如果在一些其它的场景，比如BroadcastReceiver中也想获得Application的实例，这时就可以借助getApplicationContext()方法，getApplicationContext()比getApplication()方法的作用域会更广一些，任何一个Context的实例，只要调用getApplicationContext()方法都可以拿到我们的Application对象。
+* getApplication()用来获取Application实例的，但是这个方法只 有在Activity和Service中才能调用的到。那么也许在绝大多数情况下我们都是在Activity或者Service中使用Application的，但是如果在一些其它的场景，比如BroadcastReceiver中也想获得Application的实例，这时就可以借助getApplicationContext()方法，getApplicationContext()比getApplication()方法的作用域会更广一些，任何一个Context的实例，只要调用getApplicationContext()方法都可以拿到我们的Application对象。
 * Activity在创建的时候会new一个ContextImpl对象并在attach方法中关联它，Application和Service也差不多。ContextWrapper的方法内部都是转调ContextImpl的方法
 *创建对话框传入Application的Context是不可以的
 * 尽管Application、Activity、Service都有自己的ContextImpl，并且每个ContextImpl都有自己的mResources成员，但是由于它们的mResources成员都来自于唯一的ResourcesManager实例，所以它们看似不同的mResources其实都指向的是同一块内存
