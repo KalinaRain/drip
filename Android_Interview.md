@@ -11,12 +11,12 @@
 [一、Java](#java_title)
 * Java基本概念
 * Java面向对象
-* [Java语法基础](#java_foundation)
+* [初识Java](#java_foundation)
 	* 8种基本数据类型的大小及其封装类
+	* 访问修饰符的区别
 	* 运算符的优先级
 	* & 和 && 以及 | 和 ||
 	* 值传递和引用传递
-	* 访问修饰符的区别
 	* 不同编码下字母与中文的大小
 	* 实例变量，局部变量，类变量，final变量的区别
 * [Java之登堂入室](#java_getinto)
@@ -76,29 +76,74 @@
 Java是面向对象编程（OOP），因此，面向对象的相关知识如三大特征和六大基本原则也是需要掌握的。  
 [Java之面向对象编程](Java/Java之面向对象编程.md)  
   
-<h2 id="java_foundation">Java语法基础</h2>
+<h2 id="java_foundation">初识Java</h2>
 
 #### 8种基本数据类型的大小，以及他们的封装类
-|数据类型|大小(字节)|   范围    |封装类|
-|:------:|:--------:| :--------:|:----:|
-|byte    |   1  |  -2^7～2^7-1  | Byte |
-|short   |   2  | -2^15～2^15-1 |Short|
-|int     |   4  | -2^31～2^31-1 |Integer|
-|long    |   8  |-2^63 ～2^63-1 |Long|
-|float   |   4  |-3.4E38～3.4E38 |Float|
-|double  |   8  | -1.7E308～1.7E308 |Double|
-|boolean |   1  |  true或false  |Boolean|
-|char    |   2  |从字符型对应的整型数来划分，其表示范围是0～65535||
+|数据类型|大小(字节)|   范围    |默认值|封装类|
+|:------:|:--------:| :--------:|:----:|:----:|
+|byte    |   1  |  -2^7～2^7-1  |  0   | Byte |
+|short   |   2  | -2^15～2^15-1 |  0   | Short|
+|int     |   4  | -2^31～2^31-1 |  0   |Integer|
+|long    |   8  |-2^63 ～2^63-1 |  0L  | Long |
+|float   |   4  |-3.4E38～3.4E38 | 0.0f| Float|
+|double  |   8  | -1.7E308～1.7E308 | 0.0d|Double|
+|boolean |   1  |  true或false  | false |Boolean|
+|char    |   2  |  0～65535  |  '\u0000'   |Character|
 
-整数默认int，带小数的默认double
+* java 中数据类型除了基本数据类型，还有引用数据类型（类、接口、数据）
+* 整数默认int，带小数的默认double
+* boolean 的大小：虽然编译后1和0只需占用1位空间，但计算机处理数据的最小单位是1个字节，单个的boolean 类型变量在编译的时候是使用的int 类型。而对于boolean 类型的数组时，在编译的时候是作为byte array来编译的所以boolean 数组里面的每一个元件占一个字节。《Java虚拟机规范》给出了4个字节，和boolean数组1个字节的定义。
+
 int与integer的区别  
 http://www.cnblogs.com/shenliang123/archive/2011/10/27/2226903.html
+ 
+* 类型转换：  
+自动转换：byte-->short-->int-->long-->float-->double                   
+强制转换：①会损失精度，产生误差，小数点以后的数字全部舍弃。②容易超过取值范围。
 
 自动装箱是 Java 编译器在基本数据类型和对应的对象包装类型之间做的一个转化。比如：把 int 转化成 Integer ，double 转化成 Double，等等。反之就是自动拆箱。
+```
+public class AutoUnboxingTest {  
+
+    public static void main(String[] args) {  
+        Integer a = new Integer(3);  
+        Integer b = 3;              // 将3自动装箱成Integer类型  
+        int c = 3;  
+        System.out.println(a == b); // false 两个引用没有引用同一对象  
+        System.out.println(a == c); // true a自动拆箱成int类型再和c比较  
+    }  
+}
+```
+#### 访问修饰符public protected private default（不写）的区别：
+|修饰符  |当前类 |同包 |子类 |其他包|
+|:------:|:-----:|:---:|:---:|:----:|
+| public |  √   |  √ |  √ |  √  |
+|protected| √   |  √ |  √ |  ×  |
+| default|  √   |  √ |  × |  ×  |
+| private|  √   |  × |  × |  ×  |
+
+类的成员不写访问修饰时默认为 default 。默认对于同一个包中的其他类相当于公开（public），对于不是同一个包中的其他类相当于私有（private）。受保护（protected）对子类相当于公开，对不是同一包中的没有父子关系的类相当于私有。Java 中，外部类的修饰符只能是 public 或默认，类的成员（包括内部类）的修饰符可以是以上四种。
 
 #### 运算符的优先级
 
 #### & 和 && 以及 | 和 ||
+& 和 && 都可以用作逻辑与的运算符，表示逻辑与（and），当运算符两边的表达式的结果都为 true 时，整个运算结果才为 true，否则，只要有一方为 false，则结果为 false。
+
+&& 还具有短路的功能，即如果第一个表达式为 false，则不再计算第二个表达式，例如，对于 if(str != null&& !str.equals(“”)) 表达式，当 str 为 null 时，后面的表达式不会执行，所以不会出现 NullPointerException 如果将 && 改为 & ，则会抛出NullPointerException 异常。If(x==33 & ++y>0) y 会增长， If(x==33 && ++y>0) 不会增长。
+
+& 还可以用作位运算符，当 & 操作符两边的表达式不是 boolean 类型时，& 表示按位与操作，我们通常使用 0x0f 来与一个整数进行 & 运算，来获取该整数的最低 4 个 bit 位，例如，0x31 & 0x0f 的结果为 0x01。
+
+备注：这道题先说两者的共同点，再说出 && 和 & 的特殊之处，并列举一些经典的例子来表明自己理解透彻深入、实际经验丰富。
+3. 存在使 i + 1 < i的数吗?
+答案：存在
+
+解析：如果 i 为 int 型，那么当 i 为 int 能表示的最大整数时，i+1 就溢出变成负数了，此时不就 <i 了吗。
+
+扩展：存在使 i > j || i <= j 不成立的数吗?
+
+答案：存在
+
+解析：比如 Double.NaN 或 Float.NaN 。
 
 #### 值传递和引用传递
 对象被值传递，意味着传递了对象的一个副本。因此，就算是改变了对象副本，也不会影响源对象的值。  
@@ -108,14 +153,6 @@ http://www.cnblogs.com/shenliang123/archive/2011/10/27/2226903.html
 #### 不同编码下字母与中文的大小
 
 
-#### 访问修饰符public protected private default（不写）的区别：
-|修饰符  |当前类 |同包 |子类 |其他包|
-|:------:|:-----:|:---:|:---:|:----:|
-| public |  √   |  √ |  √ |  √  |
-|protected| √   |  √ |  √ |  ×  |
-| default|  √   |  √ |  × |  ×  |
-| private|  √   |  × |  × |  ×  |
-
 #### 实例变量，局部变量，类变量，final变量的区别
 
 ***
@@ -124,12 +161,42 @@ http://www.cnblogs.com/shenliang123/archive/2011/10/27/2226903.html
 transient变量不会进行序列化。例如一个实现Serializable接口的类在序列化到ObjectStream的时候，transient类型的变量不会被写入流中，同时，反序列化回来的时候，对应变量的值为null。
 http://www.cnblogs.com/lanxuezaipiao/p/3369962.html
 
+”static” 关键字是什么意思？Java 中是否可以覆盖(override) 一个 private 或者是 static 的方法？
+>“static” 关键字表明一个成员变量或者是成员方法可以在没有所属的类的实例变量的情况下被访问。  
+Java 中 static 方法不能被覆盖，因为方法覆盖是基于运行时动态绑定的，而 static 方法是编译时静态绑定的。static 方法跟类的任何实例都不相关，所以概念上不适用。
+
+是否可以在 static 环境中访问非 static 变量？
+>static 变量在 Java 中是属于类的，它在所有的实例中的值是一样的。当类被Java虚拟机载入的时候，会对 static 变量进行初始化。如果你的代码尝试不用实例来访问非 static 的变量，编译器会报错，因为这些变量还没有被创建出来，还没有跟任何实例关联上。
+
+volatile关键字是否能保证线程安全？
+>答案：不能  
+解析：volatile 关键字用在多线程同步中，可保证读取的可见性，JVM只是保证从主内存加载到线程工作内存的值是最新的读取值，而非 cache 中。但多个线程对 volatile 的写操作，无法保证线程安全。例如假如线程 1，线程 2 在进行 read,load 操作中，发现主内存中 count 的值都是 5，那么都会加载这个最新的值，在线程 1 堆 count 进行修改之后，会 write 到主内存中，主内存中的 count 变量就会变为 6；线程 2 由于已经进行 read,load 操作，在进行运算之后，也会更新主内存 count 的变量值为 6；导致两个线程及时用 volatile 关键字修改之后，还是会存在并发的情况。
+
+6. Java 中的 final关键字有哪些用法？
+答：
+(1)修饰类：表示该类不能被继承；
+(2)修饰方法：表示方法不能被重写；
+(3)修饰变量：表示变量只能一次赋值以后值不能被修改（常量）。
+
+final, finally, finalize 的区别?
+>final：修饰符（关键字）有三种用法：如果一个类被声明为final，意味着它不能再派生出新的子类，即不能被继承，因此它和 abstract 是反义词。将变量声明为 final，可以保证它们在使用中不被改变，被声明为 final 的变量必须在声明时给定初值，而在以后的引用中只能读取不可修改。被声明为 final 的方法也同样只能使用，不能在子类中被重写。  
+finally：通常放在 try…catch 的后面构造总是执行代码块，这就意味着程序无论正常执行还是发生异常，这里的代码只要 JVM 不关闭都能执行，可以将释放外部资源的代码写在 finally 块中。  
+finalize：Object 类中定义的方法，Java 中允许使用 finalize() 方法在垃圾收集器将对象从内存中清除出去之前做必要的清理工作。这个方法是由垃圾收集器在销毁对象时调用的，通过重写finalize() 方法可以整理系统资源或者执行其他清理工作。
+
 ### 重载和覆写
 对于重载和覆写，除了两者的使用规则和区别外，最重要的就是子类和父类中重载和覆写需要注意的事项。  
 [重载和覆写](Java/重载和覆写.md)
 
 ### interface和abstract类
+接口中所有的方法隐含的都是抽象的。而抽象类则可以同时包含抽象和非抽象的方法。  
+类可以实现很多个接口，但是只能继承一个抽象类  
+类如果要实现一个接口，它必须要实现接口声明的所有方法。但是，类可以不实现抽象类声明的所有方法，当然，在这种情况下，类也必须得声明成是抽象的。  
+抽象类可以在不提供接口方法实现的情况下实现接口。  
+Java 接口中声明的变量默认都是 final 的。抽象类可以包含非 final 的变量。  
+Java 接口中的成员函数默认是 public 的。抽象类的成员函数可以是 private，protected 或者是 public 。  
+接口是绝对抽象的，不可以被实例化。抽象类也不可以被实例化，但是，如果它包含 main 方法的话是可以被调用的。  
 [interface和abstract类](Java/抽象类和interface.md)  
+
 #### 接口的意义
 规范、扩展、回调
 
@@ -150,8 +217,12 @@ http://www.cnblogs.com/chenssy/p/3388487.html
 
 ### IO流
 [IO流知识](Java/IO流.md)  
+
 ### String StringBuilder StringBuffer对比
 [String StringBuilder StringBuffer](String-StringBuilder-StringBuffer.md)
+Java 平台提供了两种类型的字符串：String 和StringBuffer / StringBuilder，它们可以储存和操作字符串。其中 String 是只读字符串，也就意味着 String 引用的字符串内容是不能被改变的。而 StringBuffer 和 StringBuilder 类表示的字符串对象可以直接进行修改。StringBuilder 是 JDK 1.5 中引入的，它和 StringBuffer 的方法完全相同，区别在于它是在单线程环境下使用的，因为它的所有方面都没有被 synchronized 修饰，因此它的效率也比 StringBuffer 略高。
+
+有一个面试题问：有没有哪种情况用 + 做字符串连接比调用 StringBuffer / StringBuilder 对象的 append 方法性能更好？如果连接后得到的字符串在静态存储区中是早已存在的，那么用+做字符串连接是优于 StringBuffer / StringBuilder 的 append 方法的。
 
 #### equals与==和hashCode的区别的区别
 http://blog.csdn.net/tiantiandjava/article/details/46988461
@@ -359,6 +430,12 @@ java.net: 这里面是与网络有关的类，比如 URL,URLConnection 等。
 java.util: 这个是系统辅助类，特别是集合类 Collection,List,Map 等。  
 java.sql: 这个是数据库操作的类，Connection, Statememt，ResultSet 等
 
+char 型变量中能不能存贮一个中文汉字?为什么?
+>答：char 类型可以存储一个中文汉字，因为 Java 中使用的编码是 Unicode（不选择任何特定的编码，直接使用字符在字符集中的编号，这是统一的唯一方法），一个 char 类型占 2 个字节（16bit），所以放一个中文是没问题的。  
+补充：使用 Unicode 意味着字符在 JVM 内部和外部有不同的表现形式，在 JVM 内部都是 Unicode，当这个字符被从 JVM 内部转移到外部时（例如存入文件系统中），需要进行编码转换。所以 Java 中有字节流和字符流，以及在字符流和字节流之间进行转换的转换流，如 InputStreamReader 和 OutputStreamReader，这两个类是字节流和字符流之间的适配器类，承担了编码转换的任务；对于 C 程序员来说，要完成这样的编码转换恐怕要依赖于union（联合体/共用体）共享内存的特征来实现了。
+
+Math.round(11.5) 等于多少? Math.round(-11.5)等于多少? 
+>答：Math.round(11.5)==12  Math.round(-11.5)==-11  round 方法返回与参数 最接近的长整数，参数加 1/2 后求其 floor
 
 <a href="#top" style="display:block;text-align:right;">返回顶部</a>
 <hr width=100% size=3 color=#d8d8d8>
