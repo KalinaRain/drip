@@ -1,6 +1,6 @@
 # IO流  
 
-IO流分为字符流和字节流，分类基本上只有笔试的时候会考到，但是说道IO流，最常考也是最常用的就是使用IO流读取数据
+IO流分为字符流和字节流，笔试的时候很可能考字符流和字节流有哪些类亦或是给你一个类分辨是什么流，但是说道IO流，最常考也是最常用的就是使用IO流读取数据
 
 ## IO流分类图片
 ![IO](image/IO流分类.jpg)  
@@ -12,8 +12,8 @@ IO流分为字符流和字节流，分类基本上只有笔试的时候会考到
 
 总结：以 InputStream（输入）/OutputStream（输出）为后缀的是字节流；以Reader（输入）/Writer（输出）为后缀的是字符流。
 
-2. 阅读 Shape 和 Circle 两个类的定义。在序列化一个 Circle 的对象 circle 到文件时，下面哪个字段会被保存到文件中？
-<pre><code>
+>阅读 Shape 和 Circle 两个类的定义。在序列化一个 Circle 的对象 circle 到文件时，下面哪个字段会被保存到文件中？
+```
 class Shape {
 
        public String name;
@@ -28,7 +28,8 @@ class Circle extends Shape implements Serializable{
 
        public static String type = "Circle";
 
-}</code></pre>
+}
+```
 A. name B. radius C. color D. type
 
 答案：B
