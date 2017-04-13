@@ -7,11 +7,11 @@
 
 <hr width=100% size=3 color=#d8d8d8>
 
-# <p id="top">目录</p>  
-[一、Java](#java_title)
-* Java基本概念
-* Java面向对象
-* [初识Java](#java_foundation)
+# <p id="top">目 录</p>  
+### [一、Java](#java_title)
+1. Java基本概念
+2. Java面向对象
+3. [初识Java](#java_foundation)
 	* 8种基本数据类型的大小及其封装类
 	* 访问修饰符的区别
 	* 运算符的优先级
@@ -19,52 +19,52 @@
 	* 值传递和引用传递
 	* 不同编码下字母与中文的大小
 	* 实例变量，局部变量，类变量，final变量的区别
-* [Java之登堂入室](#java_getinto)
+4. [Java之登堂入室](#java_getinto)
 	* 几个关键字 volatile、transient、synchronized、native
 	* interface和abstract类
 	* IO流
-* 集合
-* [线程](#java_thread)
-* [反射](#java_reflect)
-* [泛型](#java_generic)
-* [GC和内存分配策略](#GC)
+5. 集合
+6. [线程](#java_thread)
+7. [反射](#java_reflect)
+8. [泛型](#java_generic)
+9. [GC和内存分配策略](#GC)
 	* 对象是否已死
 	* GC算法（标记-清除、复制、标记-整理、分代收集）
 	* HotSpot的算法实现
 	* 内存分配与回收策略
 	* 垃圾收集器
-* [虚拟机类加载机制](#class_load)
+10. [虚拟机类加载机制](#class_load)
 	* 类加载的过程（加载、验证、准备、解析、初始化五个步骤）
 	* 类加载器（类与类、双亲委派、破坏双亲委派）
-* GC（垃圾回收）
-* [其他面试高频问题](#java_other_interview)
+11. [其他面试高频问题](#java_other_interview)
+  
+### [二、Android](#android_title)  
++ 四大组件
++ 图片缓存
++ View
++ 通信机制
++ 性能优化
++ 热修复
 
-[二、Android](#android_title)  
-* 四大组件
-* 图片缓存
-* View
-* 通信机制
-* 性能优化
-* 热修复
+### [三、数据结构](#3)  
 
-[三、数据结构](#3)  
+### [四、算法](#4)  
++ 时间复杂度和空间复杂度
++ 排序
++ 字符串
++ 队列和栈
++ 链表
++ 二分搜索
++ 二叉树
++ 位运算
++ 动态规划
++ 大数据相关
++ 概率和排列组合
 
-[四、算法](#4)  
-* 时间复杂度和空间复杂度
-* 排序
-* 字符串
-* 队列和栈
-* 链表
-* 二分搜索
-* 二叉树
-* 位运算
-* 动态规划
-* 大数据相关
-* 概率和排列组合
-
-[五、计算机基础](#5)  
-* 计算机网络
-
+### [五、计算机基础](#5)  
++ 计算机网络
++ 其他
+  
 <hr width=100% size=3 color=#d8d8d8>
 
 <h1 id="java_title">一、Java</h1>
@@ -102,7 +102,7 @@ http://www.cnblogs.com/shenliang123/archive/2011/10/27/2226903.html
 强制转换：①会损失精度，产生误差，小数点以后的数字全部舍弃。②容易超过取值范围。
 
 自动装箱是 Java 编译器在基本数据类型和对应的对象包装类型之间做的一个转化。比如：把 int 转化成 Integer ，double 转化成 Double，等等。反之就是自动拆箱。
-```
+```java
 public class AutoUnboxingTest {  
 
     public static void main(String[] args) {  
