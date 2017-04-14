@@ -37,7 +37,7 @@
 	* 类加载的过程（加载、验证、准备、解析、初始化五个步骤）
 	* 类加载器（类与类、双亲委派、破坏双亲委派）
 11. [其他面试高频问题](#java_other_interview)
-  
+
 ### [二、Android](#android_title)  
 + 四大组件
 + 图片缓存
@@ -64,7 +64,7 @@
 ### [五、计算机基础](#5)  
 + 计算机网络
 + 其他
-  
+
 <hr width=100% size=3 color=#d8d8d8>
 
 <h1 id="java_title">一、Java</h1>
@@ -75,7 +75,7 @@
 ## Java面向对象
 Java是面向对象编程（OOP），因此，面向对象的相关知识如三大特征和六大基本原则也是需要掌握的。  
 [Java之面向对象编程](Java/Java之面向对象编程.md)  
-  
+
 <h2 id="java_foundation">初识Java</h2>
 
 #### 8种基本数据类型的大小，以及他们的封装类
@@ -96,7 +96,7 @@ Java是面向对象编程（OOP），因此，面向对象的相关知识如三�
 
 int与integer的区别  
 http://www.cnblogs.com/shenliang123/archive/2011/10/27/2226903.html
- 
+
 * 类型转换：  
 自动转换：byte-->short-->int-->long-->float-->double                   
 强制转换：①会损失精度，产生误差，小数点以后的数字全部舍弃。②容易超过取值范围。
@@ -239,7 +239,7 @@ HashMap源码分析
 
 HashMap概述：    
 HashMap是基于哈希表的Map接口的非同步实现。此实现提供所有可选的映射操作，并允许使用null值和null键。此类不保证映射的顺序，特别是它不保证该顺序恒久不变。
-HashMap的数据结构： 
+HashMap的数据结构：
 在java编程语言中，最基本的结构就是两种，一个是数组，另外一个是模拟指针（引用），所有的数据结构都可以用这两个基本结构来构造的，HashMap也不例外。HashMap实际上是一个“链表散列”的数据结构，即数组和链表的结合体。
 ![hashmap](image/hashmap.jpg)
 
@@ -382,7 +382,7 @@ http://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=2649547702&idx=1&sn=431dcb8
 在程序运行时的区别：实例变量属于某个对象的属性，必须创建了实例对象，其中的实例变量才会被分配空间，才能使用这个实例变量。静态变量不属于某个实例对象，而是属于类，所以也称为类变量，只要程序加载了类的字节码，不用创建任何实例对象，静态变量就会被分配空间，静态变量就可以被使用了。总之，实例变量必须创建对象后才可以通过这个对象来使用，静态变量则可以直接使用类名来引用。
 
 例如，对于下面的程序，无论创建多少个实例对象，永远都只分配了一个 staticVar 变量，并且每创建一个实例对象，这个 staticVar 就会加 1 ；但是，每创建一个实例对象，就会分配一个 instanceVar ，即可能分配多个 instanceVar ，并且每个instanceVar 的值都只自加了 1 次。  
-``` 
+```
  public class VariantTest{   
     public static int staticVar = 0;    
     public int instanceVar = 0;    
@@ -390,7 +390,7 @@ http://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=2649547702&idx=1&sn=431dcb8
         staticVar++;    
         instanceVar++;    
         System.out.println(“staticVar=” + staticVar + ”,instanceVar=” + instanceVar);   
-        } 
+        }
  }
 ```
 
@@ -434,7 +434,7 @@ char 型变量中能不能存贮一个中文汉字?为什么?
 >答：char 类型可以存储一个中文汉字，因为 Java 中使用的编码是 Unicode（不选择任何特定的编码，直接使用字符在字符集中的编号，这是统一的唯一方法），一个 char 类型占 2 个字节（16bit），所以放一个中文是没问题的。  
 补充：使用 Unicode 意味着字符在 JVM 内部和外部有不同的表现形式，在 JVM 内部都是 Unicode，当这个字符被从 JVM 内部转移到外部时（例如存入文件系统中），需要进行编码转换。所以 Java 中有字节流和字符流，以及在字符流和字节流之间进行转换的转换流，如 InputStreamReader 和 OutputStreamReader，这两个类是字节流和字符流之间的适配器类，承担了编码转换的任务；对于 C 程序员来说，要完成这样的编码转换恐怕要依赖于union（联合体/共用体）共享内存的特征来实现了。
 
-Math.round(11.5) 等于多少? Math.round(-11.5)等于多少? 
+Math.round(11.5) 等于多少? Math.round(-11.5)等于多少?
 >答：Math.round(11.5)==12  Math.round(-11.5)==-11  round 方法返回与参数 最接近的长整数，参数加 1/2 后求其 floor
 
 <a href="#top" style="display:block;text-align:right;">返回顶部</a>
@@ -488,7 +488,7 @@ home键：
 
 Service全面总结与IntentService
 
-IntentService使用详解和实例介绍 
+IntentService使用详解和实例介绍
 
 Android 名企面试题及答案整理（一）
 
@@ -534,7 +534,7 @@ http://rkhcy.github.io/2017/02/14/Android%20Monitor/
 
 Serializable 和Pacleable
 Handler Message Looper
-IntentService和Service  HandlerThread ServiceHandler 
+IntentService和Service  HandlerThread ServiceHandler
 Parcelable和Serializable
 
 Fragment 全解析
@@ -600,16 +600,19 @@ https://mp.weixin.qq.com/s?sn=8b25e2915c72aacdf2e1cfa38aa1cb87&mpshare=1&srcid=0
 性能优化
 [Android性能优化（六）之卡顿那些事](https://mp.weixin.qq.com/s?chksm=eb44df3edc335628dfafc7876587d5c8bead4908a6bd3649e3e6d05ecf8f69d47f37bcc1dfed&sn=41275db0753d895f0bafedf4026c9149&scene=23&idx=1&mpshare=1&utm_source=gank.io&__biz=MzI3OTU3OTQ1Mw%3D%3D&mid=2247483756&srcid=0327YnopZIlDAyjEVlv1uZC1&utm_medium=email#rd)  
 
+http://www.jianshu.com/p/218e5cde47fe
 启动加速
 布局性能优化(include, viewstub, merge)
 OOM
 电量
 http://blog.csdn.net/dd864140130/article/details/62431927
 XML解析（DOM、SAX、Pull的区别和优缺点）
-
+应用瘦身：http://blog.coderclock.com/2017/03/31/android/Android应用继续瘦身，以及一些注意事项/
 ### 热修复
 [Robust](https://mp.weixin.qq.com/s?chksm=9772ef54a00566424f0afd77ce2137562f90ec848ccdffe1452eb878014a88f5d70b72d29713&srcid=0328UmbhnqspIjS4Gfp2EAzM&devicetype=iMac+MacBookPro11%2C3+OSX+OSX+10.12.3+build%2816D32%29&uin=MTY5MDI4NDA4Mg%3D%3D&idx=1&mpshare=1&pass_ticket=GrgT4%2F8z5Z6vuV8DwNMI745mbJuCP7SBDnopt58DCKnLlfs5g%2BvWhAParDyJuKDw&mid=2247483865&ascene=0&key=37fbc9f7954b58efd06ddba64843a42ef37539694682aa69cf4255337438ad62c868e2c02bfc92859259bbd4bb968d292f0be3bcd399838671e04765c404389ec03adbfc87726a1e41d91c2eacd129cc&sn=55a2fbadf4ecf9ffed1f66180e8c1f73&fontScale=100&scene=1&nettype=WIFI&utm_source=gank.io&__biz=MzIwOTQ1MjAwMg%3D%3D&utm_medium=email&version=12020110) (https://github.com/Meituan-Dianping/Robust ,Robust是美团点评团队在2017年3月开源的热修复框架，和阿里的AndFix不同，Robust不用依赖JNI层，直接通过Java层代码就可以实现热修复。)
 [AndFix]
+### 插件化
+http://blog.csdn.net/yulong0809/article/category/6745120
 
 ### 混合编译
 [Android N混合编译与对热补丁影响解析](http://mp.weixin.qq.com/s?sn=054d595af6e824cbe4edd79427fc2706&idx=1&scene=1&srcid=0811uOHr2RBQDKF0jKEdL4Vc&utm_source=gank.io&__biz=MzAwNDY1ODY2OQ%3D%3D&mid=2649286341&utm_medium=email##)
@@ -727,9 +730,9 @@ sql语句：
 2，线程：相对与进程而言，线程是一个更加接近与执行体的概念，它可以与同进程的其他线程共享数据，但拥有自己的栈空间，拥有独立的执行序列。   
 两者都可以提高程序的并发度，提高程序运行效率和响应时间。   
 线程和进程在使用上各有优缺点：线程执行开销小，但不利于资源管理和保护；而进程正相反。同时，线程适合于在SMP机器上运行，而进程则可以跨机器迁移。
-根本区别就一点：用多进程每个进程有自己的地址空间(address space)，线程则共享地址空间。所有其它区别都是由此而来的： 
-1、速度：线程产生的速度快，线程间的通讯快、切换快等，因为他们在同一个地址空间内。 
-2、资源利用率：线程的资源利用率比较好也是因为他们在同一个地址空间内。 
+根本区别就一点：用多进程每个进程有自己的地址空间(address space)，线程则共享地址空间。所有其它区别都是由此而来的：
+1、速度：线程产生的速度快，线程间的通讯快、切换快等，因为他们在同一个地址空间内。
+2、资源利用率：线程的资源利用率比较好也是因为他们在同一个地址空间内。
 3、同步问题：线程使用公共变量/内存时需要使用同步机制还是因为他们在同一个地址空间内
 1.进程有独立的进程空间，进程中的数据存放空间（堆空间和栈空间）是独立的。
 2.线程的堆空间是共享的，栈空间是独立的，线程消耗的资源也比进程小，二者之间可以相互影响。
@@ -786,7 +789,7 @@ sql语句：
 6. 内存映射:内存映射允许任何多个进程间通信每一个使用该机制的进程通过把一个共享的文件映射到自己的进程地址空间来实现它。
 7. 信号量(semaphore):主要作为进程间以及同一进程不同线程之间的同步手段。
 8. 套接字(Socket):更为一般的进程间通信机制，可用于不同机器之间的进程间通信。
- 
+
 **逻辑地址、物理地址的区别**
 
 **进程调度算法**
@@ -841,4 +844,3 @@ sql语句：
   * 将同一个物理内存附属到两个进程的虚拟内存中
 * socket
   * 可以跨网络通信
-

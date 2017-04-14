@@ -61,6 +61,13 @@ Android开发工程师面试知识整理：
 ### MusicPlayerView
 - [Material_MusicPlayerView](https://github.com/amineghabi/Material_MusicPlayerView)（material design的音乐播放器）
 
+### 密码解锁LockView
+- [PatternLockView](https://github.com/aritraroy/PatternLockView)（漂亮的九宫格解锁）
+- [LolliPin](https://github.com/OrangeGangsters/LolliPin)（为应用程序提供pin密码，包含数字和指纹识别）
+
+### 评分
+- [SmileyRating](https://github.com/sujithkanna/SmileyRating)（通过笑脸表情的变化来打分，挺有意思的）
+
 ***
 <h2 id="2">动画</h2>
 
@@ -74,7 +81,14 @@ Android开发工程师面试知识整理：
 - [AndroidViewAnimations](https://github.com/daimajia/AndroidViewAnimations)（daimajia大神的，各种动画，nice）
 - [AndroidSwipeLayout](https://github.com/daimajia/AndroidSwipeLayout)（listview和RecyclerView的滑动删除、收藏）
 - [lottie-android](https://github.com/airbnb/lottie-android)（该库可以通过Adobe After Effects做出动画效果然后导出为json文件，利用LottieAnimationView可以在安卓中加载为动画效果，不受限于安卓平台，动画效果可以很多）
+- [Grav](https://github.com/glomadrian/Grav)（Android 粒子动画效果——多粒子运动）
   
+### Toolbar
+- [JellyToolbar](https://github.com/Yalantis/JellyToolbar)（果冻效果的Toolbar）
+
+### 下拉刷新
+- [FireworkyPullToRefresh](https://github.com/Cleveroad/FireworkyPullToRefresh)（带有烟花效果的下来刷新，不过背景素材有点单调）
+
 ***
 <h2 id="3">开发常用</h2>
   
@@ -97,6 +111,7 @@ Android开发工程师面试知识整理：
 - [PageIndicatorView](https://github.com/romandanylyk/PageIndicatorView)（An page indicator for Android ViewPager）
 - [PagerSlidingTabStrip](https://github.com/jpardogo/PagerSlidingTabStrip)（Material Design风格，感觉和TabLayout实现的差不多）
 - [ViewPagerIndicator](https://github.com/JakeWharton/ViewPagerIndicator)（很久的了，我觉得官方新出的一些都比这个好）
+- [UltraViewPager](https://github.com/alibaba/UltraViewPager)（UltraViewPager是一个封装多种特性的ViewPager，支持横向滑动／纵向滑动,支持一屏内显示多页,循环滚动,定时滚动和页面切换动效）
 
 ### CoordinatorTabLayout
 - [CoordinatorTabLayout](https://github.com/hugeterry/CoordinatorTabLayout)（可以快速实现TabLayout和CoordinatorLayout的组合效果）
@@ -121,18 +136,29 @@ Android开发工程师面试知识整理：
 ### 加载（过程、失败）
 - [stateLayout](https://github.com/fingdo/stateLayout)（加载的替换layout，可以替换layout中的内容，类似于EmptyView之类的）
   
-### 密码
-- [LolliPin](https://github.com/OrangeGangsters/LolliPin)（为应用程序提供pin密码，包含数字和指纹识别）
-
 ### 管理库
 - [spruce-android](https://github.com/willowtreeapps/spruce-android)（动画管理库）
   
+### 压缩
+- [CompressHelper](https://github.com/nanchen2251/CompressHelper)（压缩文件，压缩图片，压缩后清晰度还不错）
+
+### 指纹
+- [FingerprintManager](https://github.com/JesusM/FingerprintManager)（安卓的指纹管理工具）
+
+### 二维码
+- [ZXing](https://github.com/zxing/zxing)（ZXing是由谷歌出品的对条码和二维码的解析工具，呗广泛使用）
+- [PressScanCode](https://github.com/BolexLiu/PressScanCode)（一个长按扫描 View 上的二维码的工具库，类似于微信的长按识别二维码）
+
+### 三维效果
+- [Isometric](https://github.com/FabianTerhorst/Isometric)（能构建出三维图效果，但是对坐标的要求比较高，最好是有点基础的人使用）
+
 ### app shortcuts
 - [shortbread](https://github.com/MatthiasRobbers/shortbread)（自Android 7.0后，用户可以长按桌面图标弹出快捷菜单，该库可以帮助开发者快速开发app shortcuts）
   
 ### 著名开源库
 - [vlayout](https://github.com/alibaba/vlayout)（阿里巴巴开源的项目——VirtualLayout是一个针对RecyclerView的LayoutManager扩展, 主要提供一整套布局方案和布局间的组件复用的问题。说白了就是对复杂布局的解决方案）
 - [atlas](http://atlas.taobao.org/index.html)（带你重返App开发的田园时代——其实就是为开发者解决繁杂的业务关系和一些迭代与集成问题，总之，挺厉害的）
+- 数据库相关：[android-lite-orm](https://github.com/litesuits/android-lite-orm)、[ORMLite](http://ormlite.com/)、[sugar](https://github.com/satyan/sugar)、[greenDAO](http://greenrobot.org/greendao/documentation/)、[Realm](https://realm.io/)、[activeandroid](http://www.activeandroid.com/)、[LitePal](https://github.com/LitePalFramework/LitePal)
 
 ***
 <h2 id="4">架构相关</h2>
@@ -145,6 +171,8 @@ Android开发工程师面试知识整理：
 - [TheMVP](https://github.com/kymjs/TheMVP)（kymjs的一个新型MVP设计）
 - [Espresso](https://github.com/TonnyL/Espresso)（基于MVP架构和Material Design设计风格，采用RxJava2, Retrofit2, Realm and ZXing开发的快递查询App）
   
+### 实战项目
+- [bilibili-android-client](https://github.com/HotBitmapGG/bilibili-android-client)（非官方的bilibili客户端，抓去的ios的接口，整体封装不错，适合新入手的同学）
 
 ***
 <h2 id="5">安卓Base封装</h2>
@@ -180,6 +208,7 @@ Android开发工程师面试知识整理：
 ### Android Studio插件
 - [JRebel](https://zeroturnaround.com/software/jrebel-for-android/features/)（Android 高效开发调试神器 JRebel，效率比Instant Run高且稳定）
 - [here-be-dragons](https://github.com/anupcowkur/here-be-dragons)（用注解把那些恶心的，或者有 Hack 功能的代码标注出来，每次调用时 IDE 都会提醒这个函数调用有潜在风险）
+- [ButterKnife Zelezny](https://github.com/avast/android-butterknife-zelezny)（对应ButterKnife 的插件，方便开发者快速实例化view）
 
 ### 安全相关
 - [condom](https://github.com/oasisfeng/condom)（一个超轻超薄的Android工具库，阻止三方SDK中常见的严重影响用户体验的『链式唤醒』行为。（对应用自身的功能无影响））
