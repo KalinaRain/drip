@@ -77,6 +77,7 @@ Android开发工程师面试知识整理：
 - [NumberProgressBar](https://github.com/daimajia/NumberProgressBar)（daimajia大神的带数字的横向ProgressBar）
   
 ### 动画
+- [Android Transition Framework](https://github.com/lgvalle/Material-Animations)（安卓5.0出来的一个动画框架，很强大，该链接只是一个demo示例）
 - [recyclerview-animators](https://github.com/wasabeef/recyclerview-animators)（RecyclerView相关动画）
 - [AndroidViewAnimations](https://github.com/daimajia/AndroidViewAnimations)（daimajia大神的，各种动画，nice）
 - [AndroidSwipeLayout](https://github.com/daimajia/AndroidSwipeLayout)（listview和RecyclerView的滑动删除、收藏）
@@ -133,6 +134,9 @@ Android开发工程师面试知识整理：
 - [Album](https://github.com/yanzhenjie/Album)（图片选择器，在底部可以选择文件夹）
 - [boxing](https://github.com/Bilibili/boxing)（boxing是B站出品的一个多媒体选择器库，可以选择一张或者多张图片，提供预览和裁剪功能。同样支持gif图，选择视频和图像压缩功能。）
   
+### 图片裁剪
+- [CropIwa](https://github.com/steelkiwi/cropiwa)（一个可以自定义裁剪形状和比例的库，包括圆形和矩形）
+
 ### 加载（过程、失败）
 - [stateLayout](https://github.com/fingdo/stateLayout)（加载的替换layout，可以替换layout中的内容，类似于EmptyView之类的）
   
@@ -209,6 +213,9 @@ Android开发工程师面试知识整理：
 - [JRebel](https://zeroturnaround.com/software/jrebel-for-android/features/)（Android 高效开发调试神器 JRebel，效率比Instant Run高且稳定）
 - [here-be-dragons](https://github.com/anupcowkur/here-be-dragons)（用注解把那些恶心的，或者有 Hack 功能的代码标注出来，每次调用时 IDE 都会提醒这个函数调用有潜在风险）
 - [ButterKnife Zelezny](https://github.com/avast/android-butterknife-zelezny)（对应ButterKnife 的插件，方便开发者快速实例化view）
+
+### gradle插件
+- [McImage](https://github.com/Aweme/McImage)（帮助检查res中的大图并压缩图片，包括Jar包、AAR、子Module中的图）
 
 ### 安全相关
 - [condom](https://github.com/oasisfeng/condom)（一个超轻超薄的Android工具库，阻止三方SDK中常见的严重影响用户体验的『链式唤醒』行为。（对应用自身的功能无影响））
