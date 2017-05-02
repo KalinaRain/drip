@@ -44,6 +44,7 @@ Android开发工程师面试知识整理：
 - [LightCalendarView](https://github.com/recruit-mp/LightCalendarView)（简洁风格的日历 View）
 - [OneCalendarView](https://github.com/MorochoRochaDarwin/OneCalendarView)（该日历组件还是相当新颖的）
 - [material-calendarview](https://github.com/prolificinteractive/material-calendarview)（日历组件，感觉UI和效果基本上和一些手机上原装的日历差不多）
+- [EasyCalendar](https://github.com/shichaohui/EasyCalendar)（可进行 UI 定制的日历组件，轻松完成签到日历功能）
   
 ### RecyclerView、ListView、GridView的封装
 - [EasyRecyclerView](https://github.com/Jude95/EasyRecyclerView)（包含上拉加载和下拉刷新、EmptyView、showProgress、showError）
@@ -68,6 +69,13 @@ Android开发工程师面试知识整理：
 ### 评分
 - [SmileyRating](https://github.com/sujithkanna/SmileyRating)（通过笑脸表情的变化来打分，挺有意思的）
 
+### 输入框提示
+- [官方原生]（利用TextInputLayout and TextInputEditText来实现）
+- [FloatingEditText](https://github.com/rafakob/FloatingEditText)（将TextInputLayout and TextInputEditText合为一个类，更方便的使用）
+
+### 带阴影的ImageView
+- [PaletteImageView](https://github.com/DingMouRen/PaletteImageView)(动态的提取图片的主要颜色并作为图片阴影的控件,还可以改变图片的cornerRadis)
+
 ***
 <h2 id="2">动画</h2>
 
@@ -83,6 +91,7 @@ Android开发工程师面试知识整理：
 - [AndroidSwipeLayout](https://github.com/daimajia/AndroidSwipeLayout)（listview和RecyclerView的滑动删除、收藏）
 - [lottie-android](https://github.com/airbnb/lottie-android)（该库可以通过Adobe After Effects做出动画效果然后导出为json文件，利用LottieAnimationView可以在安卓中加载为动画效果，不受限于安卓平台，动画效果可以很多）
 - [Grav](https://github.com/glomadrian/Grav)（Android 粒子动画效果——多粒子运动）
+- [FallingView](https://github.com/DingMouRen/FallingView)（雪花飘落效果，可以自定义大小、速度和密度）
   
 ### Toolbar
 - [JellyToolbar](https://github.com/Yalantis/JellyToolbar)（果冻效果的Toolbar）
@@ -133,6 +142,7 @@ Android开发工程师面试知识整理：
 - [AwesomeImagePicker](https://github.com/myinnos/AwesomeImagePicker)（Material风格的图片选择器，包括图片和gif，能够多选）
 - [Album](https://github.com/yanzhenjie/Album)（图片选择器，在底部可以选择文件夹）
 - [boxing](https://github.com/Bilibili/boxing)（boxing是B站出品的一个多媒体选择器库，可以选择一张或者多张图片，提供预览和裁剪功能。同样支持gif图，选择视频和图像压缩功能。）
+-[RxPicker](https://github.com/imuhao/RxPicker)（基于RxJava的图片选择器）
   
 ### 图片裁剪
 - [CropIwa](https://github.com/steelkiwi/cropiwa)（一个可以自定义裁剪形状和比例的库，包括圆形和矩形）
@@ -145,9 +155,11 @@ Android开发工程师面试知识整理：
   
 ### 压缩
 - [CompressHelper](https://github.com/nanchen2251/CompressHelper)（压缩文件，压缩图片，压缩后清晰度还不错）
+- [Tiny](https://github.com/Sunzxyong/Tiny)（图片压缩框架，比微信的压缩效率略差）
 
 ### 指纹
 - [FingerprintManager](https://github.com/JesusM/FingerprintManager)（安卓的指纹管理工具）
+- [FingerprintIdentify](https://github.com/uccmawei/FingerprintIdentify)（可以接入指纹识别的SDK，稳定，额外支持三星和魅族6.0以下系统）
 
 ### 二维码
 - [ZXing](https://github.com/zxing/zxing)（ZXing是由谷歌出品的对条码和二维码的解析工具，呗广泛使用）

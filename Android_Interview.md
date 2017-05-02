@@ -257,6 +257,7 @@ wait()和sleep()的区别
 线程同步的方法：sychronized、lock、reentrantLock分析
 
 <h2 id="java_reflect">java反射</h2>
+资料：http://wingjay.com/2017/04/26/Java-技术之反射
 
 <h2 id="java_callback">java回调</h2>
 接口与回调；回调的原理；写一个回调demo；
@@ -481,6 +482,8 @@ ART缺点：
 * 尽管Application、Activity、Service都有自己的ContextImpl，并且每个ContextImpl都有自己的mResources成员，但是由于它们的mResources成员都来自于唯一的ResourcesManager实例，所以它们看似不同的mResources其实都指向的是同一块内存
 * Context的数量等于Activity的个数 + Service的个数 + 1，这个1为Application
 
+线程间通信：
+http://wingjay.com/2017/04/09/Java里如何实现线程间通信
 #### 四大组件与Fragment
 Activity 与Fragment（生命周期，四种启动模式） 生命周期：
 电话打进来：
@@ -512,11 +515,12 @@ ApplicationContext和ActivityContext的区别
 说一款你认为当前比较火的应用并设计(直播APP)
 
 
-消息处理机制
+### 消息处理机制
+理解Looper, Handler, and HandlerThread（https://blog.mindorks.com/android-core-looper-handler-and-handlerthread-bd54d69fe91a）
 Binder
 AIDL
-VIew绘制
-事件分发机制
+### VIew绘制
+### 事件分发机制
 #### IPC
 http://qlm.pw/2017/03/14/android-ipc-机制/
 
@@ -595,6 +599,8 @@ https://mp.weixin.qq.com/s?sn=8b25e2915c72aacdf2e1cfa38aa1cb87&mpshare=1&srcid=0
 权限申请：
 - [Android 6.0运行时权限简析及最佳实践](http://www.jianshu.com/p/cdcbd3038902)
 
+深入理解ServiceManager：https://pqpo.me/2017/04/26/learn-servicemanager
+
 贝赛尔曲线（安卓水波运动效果）
 
 性能优化
@@ -608,11 +614,16 @@ OOM
 http://blog.csdn.net/dd864140130/article/details/62431927
 XML解析（DOM、SAX、Pull的区别和优缺点）
 应用瘦身：http://blog.coderclock.com/2017/03/31/android/Android应用继续瘦身，以及一些注意事项/
+使用ArrayMap和SparseArray（https://blog.mindorks.com/android-app-optimization-using-arraymap-and-sparsearray-f2b4e2e3dc47）
+
 ### 热修复
 [Robust](https://mp.weixin.qq.com/s?chksm=9772ef54a00566424f0afd77ce2137562f90ec848ccdffe1452eb878014a88f5d70b72d29713&srcid=0328UmbhnqspIjS4Gfp2EAzM&devicetype=iMac+MacBookPro11%2C3+OSX+OSX+10.12.3+build%2816D32%29&uin=MTY5MDI4NDA4Mg%3D%3D&idx=1&mpshare=1&pass_ticket=GrgT4%2F8z5Z6vuV8DwNMI745mbJuCP7SBDnopt58DCKnLlfs5g%2BvWhAParDyJuKDw&mid=2247483865&ascene=0&key=37fbc9f7954b58efd06ddba64843a42ef37539694682aa69cf4255337438ad62c868e2c02bfc92859259bbd4bb968d292f0be3bcd399838671e04765c404389ec03adbfc87726a1e41d91c2eacd129cc&sn=55a2fbadf4ecf9ffed1f66180e8c1f73&fontScale=100&scene=1&nettype=WIFI&utm_source=gank.io&__biz=MzIwOTQ1MjAwMg%3D%3D&utm_medium=email&version=12020110) (https://github.com/Meituan-Dianping/Robust ,Robust是美团点评团队在2017年3月开源的热修复框架，和阿里的AndFix不同，Robust不用依赖JNI层，直接通过Java层代码就可以实现热修复。)
 [AndFix]
 ### 插件化
 http://blog.csdn.net/yulong0809/article/category/6745120
+
+### 注解
+有几种库实现注解方式：https://blog.mindorks.com/improve-your-android-coding-through-annotations-26b3273c137a
 
 ### 混合编译
 [Android N混合编译与对热补丁影响解析](http://mp.weixin.qq.com/s?sn=054d595af6e824cbe4edd79427fc2706&idx=1&scene=1&srcid=0811uOHr2RBQDKF0jKEdL4Vc&utm_source=gank.io&__biz=MzAwNDY1ODY2OQ%3D%3D&mid=2649286341&utm_medium=email##)
@@ -620,6 +631,20 @@ http://blog.csdn.net/yulong0809/article/category/6745120
 除此之外，也有不少大牛将安卓面试的知识点整理过，有兴趣的可以访问看看。
 https://hit-alibaba.github.io/interview
 https://github.com/karmalove/AndroidInterview
+
+#### 安卓开发中用到的工具
+https://blog.mindorks.com/android-development-useful-tools-fd73283e82e3
+
+#### RxJava：
+学习路线：https://blog.mindorks.com/a-complete-guide-to-learn-rxjava-b55c0cea3631  
+RxJava中的线程管理：http://zjutkz.net/2017/04/26/浅谈RxJava中的线程管理/
+
+### 架构
+
+#### MVP
+慢慢学习：https://blog.mindorks.com/essential-guide-for-designing-your-android-app-architecture-mvp-part-1-74efaf1cda40
+
+#### MVC
 
 <a href="#top" style="display:block;text-align:right;">返回顶部</a>
 <hr width=100% size=3 color=#d8d8d8>
